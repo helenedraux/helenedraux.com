@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   base: '/',
-  title: 'research systems',
+  title: 'Hélène Draux',
   description: 'methods for knowledge and evaluation',
   cleanUrls: true,
   srcExclude: ['**/_drafts/**'],

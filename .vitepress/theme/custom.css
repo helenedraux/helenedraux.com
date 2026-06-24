@@ -104,3 +104,40 @@ blockquote {
   display: block;
   margin-top: 2rem;
 }
+
+.VPDocFooter {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 0.5px solid var(--vp-c-border);
+}
+
+.VPDocFooter .pager {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.VPDocFooter .pager-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.VPDocFooter .pager-link .desc {
+  font-size: 11px;
+  color: var(--vp-c-text-2);
+  font-weight: 400;
+}
+
+.VPDocFooter .pager-link .title {
+  font-size: 13px;
+  color: var(--vp-c-brand-1);
+  font-weight: 400;
+}
+
+.VPDocFooter .pager-link:hover .title {
+  color: var(--vp-c-brand-2);
+  text-decoration: underline;
+}
