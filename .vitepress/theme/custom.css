@@ -105,14 +105,27 @@ blockquote {
   margin-top: 2rem;
 }
 
-.VPDocFooter {
-  margin-top: 2rem;
+.vp-doc h2 {
   border-top: none;
+  padding-top: 0;
+  margin-top: 2rem;
 }
 
-.VPDocFooter .pager {
+.VPDocFooter {
+  margin-top: 2rem;
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
+.VPDoc .VPDocFooter {
+  border-top: none !important;
+}
+
+.VPDocFooter .pager,
+.VPDocFooter .prev-next {
   background: transparent;
   border: none;
+  border-top: none !important;
   padding: 0;
   box-shadow: none;
 }
