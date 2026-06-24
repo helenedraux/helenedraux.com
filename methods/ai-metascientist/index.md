@@ -35,6 +35,4 @@ The distinction that matters is where methodological authority sits. In suggesti
 
 The framework has moved through a proof-of-concept phase, including a Claude Projects implementation across three coordinated projects: a corpus builder, an analytical workflow layer, and a report checker. A fuller technical treatment is available in the Substack series [Conversational bibliometrics needs a recipe, not just ingredients](/notes/) and [The AI metascientist: designing the kitchen](/notes/).
 
----
-
 *Conceptual framework public. Workflow logic, scoring, and orchestration detail not public.*

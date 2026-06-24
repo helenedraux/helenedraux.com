@@ -1,5 +1,7 @@
 ---
 title: About
+next: false
+prev: false
 ---
 
 # About

@@ -26,6 +26,4 @@ Moving the analytical layer to BigQuery would solve most of the power and reprod
 
 The pattern itself — structured files as workflow steps, Projects as an orchestration layer — is not well documented. It works, with steering. Whether it scales depends on what replaces the in-context analytical layer.
 
----
-
 *Workflow pattern documented. Full prompt logic and project file structure not public.*

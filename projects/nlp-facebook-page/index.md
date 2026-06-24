@@ -13,5 +13,3 @@ The vocabulary divergence was sharper than expected in a few places. PUK uses "c
 The gender finding is methodologically contingent: dads appear more frequently than mums across both groups, which probably reflects the higher male prevalence of Parkinson's rather than a sampling artefact — though the analysis also notes that women post more on Facebook, which should push in the opposite direction and doesn't fully cancel the effect.
 
 Methods: word frequency with Counter, bigram collocations and concordance via NLTK, frequency comparison across groups by unique-author count rather than raw post count to avoid single-author inflation. Visualisation in Bokeh.
-
-*Code not public. Data covered by the original project engagement.*

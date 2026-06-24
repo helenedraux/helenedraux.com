@@ -15,6 +15,4 @@ The cross-model step matters. Models are skewed toward accepting their own work;
 
 The conceptual framework and prompts are available at [askava-34j.pages.dev](https://askava-34j.pages.dev/).
 
----
-
 *Conceptual framework and verification prompts public. Underlying scoring logic and task-method matrix documented on the tool site.*

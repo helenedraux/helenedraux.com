@@ -15,5 +15,3 @@ The pipeline is hybrid: deterministic lexicon-based span detection establishes w
 Once roles are classified, the relational structure becomes visible: which regions appear as publishing identities, which appear as objects of study, and whether those two distributions coincide. The more pointed analytical question is directional asymmetry: the extent to which high-income-country journals claim low-income-country regions as topical scope, and whether the reverse pattern exists at any comparable scale.
 
 Results are pending. The classifier is built and validated; the production run against the Dimensions journal corpus has not yet been completed.
-
-*Conceptual overview and methodology available. Pipeline code and prompt logic not public.*

@@ -22,6 +22,4 @@ Concretely: a listing described as "vintage 90s wool blazer brown" and one descr
 
 This is early-stage work. The attribute vocabulary is under development. Extraction from listing text is partially prototyped; image-based inference is not yet attempted. There is no public interface. These notes record the problem framing and intended direction rather than results.
 
----
-
 *Work in progress. Incomplete.*

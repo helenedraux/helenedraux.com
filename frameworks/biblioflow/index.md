@@ -12,6 +12,4 @@ The relationship to the AI metascientist is direct: BiblioFlow is the local, int
 
 This remains a concept. No implementation exists beyond the design.
 
----
-
 *Concept-level documentation only. No implementation public or private.*

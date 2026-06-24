@@ -25,6 +25,4 @@ The broader GRID+ framework extends this to all research organisations appearing
 
 The funder classifier is complete and validated against a stratified sample of 80 organisations, of which 69 were correctly classified and 11 remained ambiguous — most of the ambiguous cases reflecting genuine dual roles rather than classification error. The broader affiliation classifier is in setup phase: scope builder, evidence retrieval, and evidence audit are in place; facet classification is not yet wired.
 
----
-
 *Framework and taxonomy public at the conceptual level. Classification rules, prompt logic, and pipeline implementation not public.*

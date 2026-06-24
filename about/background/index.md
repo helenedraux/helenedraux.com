@@ -26,6 +26,4 @@ The work I am most invested in currently is the AI metascientist: a governed arc
 
 I am currently in transition and available for new engagements. I am looking for work at the intersection of AI analytics, AI evaluation, and the applied question of how AI systems behave in high-stakes analytical contexts: research evaluation, institutional reporting, policy-adjacent work where a confident but wrong answer has real consequences. I have a secondary interest in AI literacy, particularly for children, that is less professional and more parental.
 
----
-
 *Available for engagements. CV and references available on request.*

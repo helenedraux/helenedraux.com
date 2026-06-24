@@ -15,5 +15,3 @@ Association rule mining via the `arules` package tested which NTDs co-occur acro
 Spatial analysis used point data for Lymphatic Filariasis from ntdmap.org: 7,000 prevalence points, kernel density estimation in `spatstat`, contour extraction to identify clusters. Five clusters account for 31% of cases, concentrated in Egypt (Nile corridor), Sri Lanka, Zanzibar, and a Ghana-Togo-Nigeria band — each with documented mass drug administration histories, which the spatial pattern reflects.
 
 Visualisation used Carto for the interactive choropleth map, with jenks classification updating dynamically on filter; R and Tableau for statistical outputs.
-
-*Code and data not public.*

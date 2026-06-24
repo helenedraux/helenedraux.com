@@ -1,5 +1,7 @@
 ---
 title: Methods
+next: false
+prev: false
 ---
 
 # Methods

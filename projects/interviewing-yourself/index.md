@@ -18,6 +18,4 @@ The contradiction the model surfaced: dry wit appears in the archive more than I
 
 Whether this process is replicable depends on the archive. It requires enough published writing for the model to observe patterns rather than just accept assertions — and it requires a prompt that explicitly instructs the model to run the calibration before producing anything, rather than treating the conversation as optional scaffolding. The prompt is the method; the conversation is the output that matters, not just the guide at the end.
 
----
-
 *Prompt available on request. Style guide produced from this process not public in full.*

@@ -1,5 +1,7 @@
 ---
 title: Frameworks
+next: false
+prev: false
 ---
 
 # Frameworks

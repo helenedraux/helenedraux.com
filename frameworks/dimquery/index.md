@@ -14,6 +14,4 @@ DimQuery still makes mistakes. The Substack series on conversational bibliometri
 
 It is still in active use. It represents an earlier point in the trajectory toward the AI metascientist: the attempt to make a single conversational model do what a governed architecture would distribute across layers.
 
----
-
 *Schema, vocabulary snapshot, and instruction set not public. Conceptual approach documented in the Substack series on conversational bibliometrics.*

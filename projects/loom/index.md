@@ -14,6 +14,4 @@ The intended output is a weekly summary generated from the log. The summary's va
 
 Loom was interrupted before the local AI summary layer was fully built. What exists is the logging mechanism and the design for the summary; the integration with a local model is incomplete. The onboarding flow — which lets a user configure the tool through a natural language conversation rather than a settings file — reflects the broader principle described in [approach](/about/approach/): AI at the input boundary, where natural language is the right interface, rather than at the analytical core.
 
----
-
 *Work in progress. Logging mechanism built; local AI summary layer incomplete.*

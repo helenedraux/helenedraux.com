@@ -18,6 +18,4 @@ Tufte's own guidance on small multiples and layered information applies here: th
 
 The form extends Tufte's vocabulary rather than replacing any element of it. It preserves the stacked bar's strength in showing how parts compose a whole while borrowing from bump charts the ability to trace individual series across time. Whether it belongs in a given analytical context depends on whether that dual reading is worth the added visual density.
 
----
-
 *Polished analytical essay.*

@@ -13,5 +13,3 @@ The Corpus Builder pulls from Dimensions via a SQL query, writes a versioned cor
 The weekly pipeline then extracts new publications, embeds them with the same configuration as the baseline, assigns them to the frozen clusters, and computes novelty and bridge signals — papers that sit at the edges of clusters, or that connect clusters that don't usually connect. The output is a deterministic weekly brief: which clusters are receiving significant new work, where the edges are moving. No LLM calls in the monitoring path; the editorial layer is rule-based throughout.
 
 The tool is in active use. Weekly monitoring has been running since early 2026; five weekly briefs have been calibrated and accepted for operational use. The monitoring lens design — moving from generic novelty signals toward capability-intelligence lenses — is the current direction of development.
-
-*Full implementation not public. Corpus Builder methodology available on request.*

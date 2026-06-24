@@ -1,5 +1,7 @@
 ---
 title: Tools
+next: false
+prev: false
 ---
 
 # Tools

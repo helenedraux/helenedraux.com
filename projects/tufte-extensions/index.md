@@ -22,6 +22,4 @@ The bumped stacked bar addresses this. At each time period, bars are ranked by v
 
 The bumped stacked bar appeared in public reports but has not been implemented in Datawrapper or other common chart tools. This page is its first standalone documentation.
 
----
-
 *First documentation of the bumped stacked bar chart type. No canonical implementation currently exists in standard chart libraries.*

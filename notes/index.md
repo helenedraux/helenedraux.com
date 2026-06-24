@@ -1,5 +1,7 @@
 ---
 title: Notes
+next: false
+prev: false
 ---
 
 # Notes

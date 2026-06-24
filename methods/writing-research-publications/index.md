@@ -8,6 +8,4 @@ This method addresses the structured production of research publications — how
 
 Documentation for this method is forthcoming.
 
----
-
 *Page forthcoming.*

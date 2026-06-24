@@ -30,6 +30,4 @@ They also reveal the trade-off between detail and overview. A single complex cha
 
 These notes are incomplete. They record current thinking rather than settled method.
 
----
-
 *Working notes. Not a finished piece.*
