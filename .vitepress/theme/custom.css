@@ -1,0 +1,106 @@
+:root {
+  --vp-c-bg: #F5F2EC;
+  --vp-c-bg-soft: #EDEAE3;
+  --vp-c-bg-mute: #E0DDD6;
+  --vp-c-text-1: #2C2C2A;
+  --vp-c-text-2: #888780;
+  --vp-c-text-3: #B4B2A9;
+  --vp-c-brand-1: #BA7517;
+  --vp-c-brand-2: #854F0B;
+  --vp-c-brand-3: #EF9F27;
+  --vp-c-border: #D3D1C7;
+  --vp-c-divider: #D3D1C7;
+  --vp-nav-bg-color: #2C2C2A;
+  --vp-sidebar-bg-color: #F5F2EC;
+  --vp-code-bg: #EDEAE3;
+  --vp-code-color: #BA7517;
+  --vp-blockquote-border-color: #BA7517;
+}
+
+.dark {
+  --vp-c-bg: #1E1D1B;
+  --vp-c-bg-soft: #252422;
+  --vp-c-bg-mute: #2C2B29;
+  --vp-c-text-1: #E8E5DE;
+  --vp-c-text-2: #B4B2A9;
+  --vp-c-text-3: #6B6A66;
+  --vp-c-brand-1: #EF9F27;
+  --vp-c-brand-2: #FAC775;
+  --vp-c-brand-3: #BA7517;
+  --vp-c-border: #3A3936;
+  --vp-c-divider: #3A3936;
+  --vp-nav-bg-color: #141412;
+  --vp-sidebar-bg-color: #1E1D1B;
+  --vp-code-bg: #252422;
+  --vp-code-color: #EF9F27;
+  --vp-blockquote-border-color: #EF9F27;
+}
+
+/* Links */
+a {
+  color: var(--vp-c-brand-1);
+}
+
+a:hover {
+  color: var(--vp-c-brand-2);
+  text-decoration: underline;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+/* Warm nav text */
+.VPNav {
+  background-color: var(--vp-nav-bg-color);
+}
+
+.VPNavBar .title {
+  color: #F5F2EC;
+}
+
+.VPNavBarMenuLink, .VPNavBarMenuGroup .text {
+  color: rgba(245, 242, 236, 0.75);
+}
+
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.active,
+.VPNavBarMenuGroup.active .text {
+  color: #EF9F27;
+}
+
+/* Sidebar active item */
+.VPSidebarItem.is-active > .item .link .text {
+  color: var(--vp-c-brand-1);
+}
+
+/* On this page heading */
+.VPDocAsideOutline .outline-title {
+  color: var(--vp-c-brand-1);
+}
+
+.VPDocOutlineItem.active > a {
+  color: var(--vp-c-brand-1);
+}
+
+/* Blockquote warm left border */
+blockquote {
+  border-left: 3px solid var(--vp-blockquote-border-color);
+  background: var(--vp-c-bg-soft);
+  padding: 0.75rem 1rem;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Disclosure note — last paragraph of page content, italicised */
+.vp-doc p:last-of-type em,
+.vp-doc .disclosure,
+.vp-doc footer em,
+.vp-doc footer p {
+  color: var(--vp-c-text-2);
+  border-left: 3px solid var(--vp-c-brand-1);
+  padding-left: 0.75rem;
+  display: block;
+  margin-top: 2rem;
+}
