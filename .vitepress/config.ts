@@ -8,33 +8,28 @@ export default defineConfig({
   srcExclude: ['**/_drafts/**'],
 
   themeConfig: {
+    docFooter: {
+      prev: false,
+      next: false,
+    },
+
     nav: [
-      { text: 'Methods', link: '/methods/' },
-      { text: 'Frameworks', link: '/frameworks/' },
+      { text: 'Pipelines', link: '/pipelines/' },
       { text: 'Tools', link: '/tools/' },
-      { text: 'Projects', link: '/projects/' },
+      { text: 'Writing', link: '/writing/' },
+      { text: 'Archive', link: '/archive/' },
       { text: 'Notes', link: '/notes/' },
       { text: 'About', link: '/about/' },
     ],
 
     sidebar: {
-      '/methods/': [
+      '/pipelines/': [
         {
-          text: 'Methods',
+          text: 'Pipelines',
           items: [
-            { text: 'AI metascientist', link: '/methods/ai-metascientist/' },
-            { text: 'Journalscape', link: '/methods/journalscape/' },
-            { text: 'Writing research publications', link: '/methods/writing-research-publications/' },
-          ]
-        }
-      ],
-      '/frameworks/': [
-        {
-          text: 'Frameworks',
-          items: [
-            { text: 'GRID+', link: '/frameworks/grid-plus/' },
-            { text: 'BiblioFlow', link: '/frameworks/biblioflow/' },
-            { text: 'DimQuery', link: '/frameworks/dimquery/' },
+            { text: 'Journalscape', link: '/pipelines/journalscape/' },
+            { text: 'GRID+', link: '/pipelines/grid-plus/' },
+            { text: 'Biblioscope', link: '/pipelines/biblioscope/' },
           ]
         }
       ],
@@ -42,33 +37,37 @@ export default defineConfig({
         {
           text: 'Tools',
           items: [
-            { text: 'AVA', link: '/tools/ava/' },
-            { text: 'URL to DSL', link: '/tools/url-to-dsl/' },
+            { text: 'AV|VA', link: '/tools/av-va/' },
+            { text: 'DimQuery', link: '/tools/dimquery/' },
+            { text: 'Loom', link: '/tools/loom/' },
+            { text: 'Kids voice assistant', link: '/tools/kids-voice-assistant/' },
+            { text: 'Claude Projects as workflows', link: '/tools/claude-projects-workflows/' },
           ]
         }
       ],
-      '/projects/': [
+      '/writing/': [
         {
-          text: 'Projects',
+          text: 'Writing',
           items: [
-            { text: 'Loom', link: '/projects/loom/' },
-            { text: 'Bumped stacked bar chart', link: '/projects/bumped-stacked-bar/' },
-            { text: 'Small multiples', link: '/projects/small-multiples/' },
-            { text: 'Claude Projects as workflows', link: '/projects/claude-projects-workflows/' },
-            { text: 'Semantic layer over Vinted', link: '/projects/vinted-semantic-layer/' },
-            { text: 'Voice assistant for kids', link: '/projects/kids-voice-assistant/' },
+            { text: 'AI metascientist', link: '/writing/ai-metascientist/' },
+            { text: 'BiblioFlow', link: '/writing/biblioflow/' },
+            { text: 'Tufte\'s extensions', link: '/writing/tufte-extensions/' },
+            { text: 'Interviewing yourself', link: '/writing/interviewing-yourself/' },
+          ]
+        }
+      ],
+      '/archive/': [
+        {
+          text: 'Archive',
+          items: [
+            { text: 'Building a network', link: '/archive/building-a-network/' },
+            { text: 'Tropical Neglected Diseases', link: '/archive/tropical-neglected-diseases/' },
+            { text: 'NLP of a Facebook page', link: '/archive/nlp-facebook-page/' },
           ]
         }
       ],
       '/notes/': [
-        {
-          text: 'Notes',
-          items: [
-            { text: 'Methodological notes', link: '/notes/methodological-notes/' },
-            { text: 'Ongoing work', link: '/notes/ongoing-work/' },
-            { text: 'Short writings', link: '/notes/short-writings/' },
-          ]
-        }
+        { text: 'Notes', items: [] }
       ],
       '/about/': [
         {

@@ -10,6 +10,4 @@ Methods are conceptual approaches for representing and analysing the structure o
 
 Methods inform frameworks. They are reusable across analytical contexts.
 
-- [AI metascientist](/methods/ai-metascientist/)
-- [Journalscape](/methods/journalscape/)
 - [Writing research publications](/methods/writing-research-publications/)
