@@ -2,42 +2,30 @@
 title: Claude Projects as semi-structured workflows
 ---
 
-# Claude Projects as semi-structured workflows
+# Claude Projects as analytical workflows
 
-Most uses of large language model interfaces treat each session as self-contained. The model responds to a prompt; the conversation ends; the next session starts without memory of what came before. This is appropriate for general assistance. It is poorly suited to analytical work that unfolds over days or weeks, where intermediate results accumulate, constraints tighten, and the analytical frame shifts in response to what has already been examined.
+Claude Projects persist context across conversations. The standard use is a persistent chat with a set of instructions; the less obvious use is as a semi-structured analytical workflow, where the persistent context encodes state, constraints, and methodology rather than just preferences.
 
-Claude Projects change this by persisting context across sessions. Project instructions, uploaded documents, and conversation history remain available when a new session begins. The effect is not memory in the human sense — it is closer to a shared working directory with a standing brief. What persists is not recall of prior reasoning but access to prior artefacts and stated constraints.
+I arrived at this by accident. I was rebuilding the AI metascientist corpus builder for a colleague who needed something accessible without an external API or AWS infrastructure. Claude Projects was the obvious candidate: no setup friction, already available. I separated each step of the corpus construction process into a distinct file in the project context, and found that Claude followed the steps reliably — more reliably than a single long prompt, because the structure was explicit rather than embedded in prose.
 
-This persistence makes Projects useful for something more specific than open-ended chat: semi-structured analytical workflows. A semi-structured workflow is one where the overall objective and governing rules are fixed, but the path through the analysis is responsive to intermediate findings. The workflow has state. Constraints accumulate. Partial outputs from earlier sessions inform later ones. The analyst returns to the same project repeatedly, each time extending rather than restarting the work.
+The implementation runs across three coordinated projects: a corpus builder that scopes the field, agrees the definition with the user, and constructs Boolean queries through a calibrated sequence of steps; an analytical workflow layer that runs a defined set of analyses against the corpus; and a report checker that reviews the output against a set of methodological and stylistic rules. The separation is intentional: each project has a narrow job, and the hand-off between them is explicit.
 
-## The pattern
+## What works
 
-A workable project-based workflow has three components: a standing brief, a set of persistent artefacts, and a session rhythm.
+In a few hours, a convincing report is achievable. The workflow is hands-on — you cannot leave it running and return — but the methodology stays owned rather than delegated. The MCPs accelerate the corpus construction considerably: Claude checks why a subfield returns limited results, validates coherence, iterates on Boolean queries, and steps back when something has not worked. It does not tire, which matters for a process that involves many small decisions.
 
-The standing brief defines what the project is for, what constraints apply, and what outputs are expected. It is written once and revised rarely. It functions as methodology encoded in natural language — not a prompt for a single task but a charter for a series of related tasks.
+## What does not
 
-Persistent artefacts are documents, data extracts, prior analyses, or structured notes uploaded to the project. They ground the model in material that does not need to be re-supplied each session. As the workflow progresses, new artefacts are added: intermediate tables, draft interpretations, lists of open questions.
+Compared to Google BigQuery, the analytical power is limited. Academic age calculations are difficult. Data augmentation within a conversation is close to impossible — when GRID institution types needed supplementing, I had to open a separate conversation rather than augment in place. Reproducibility is a genuine problem: fields can change value between runs, and there is no equivalent of BigQuery's monthly snapshots to pin the analysis to a fixed data state.
 
-The session rhythm is how the analyst uses the project over time. A typical rhythm might be: open the project, review what was produced last session, pose the next analytical step, produce and inspect output, save or upload the result, close. The session is a unit of work within a longer arc, not a complete analysis.
+The most consistent failure mode is analytic laziness under pressure. Told there are too many publications, Claude will sample without flagging that the corpus is only 5,000 records. Rerunning an analysis can produce a rewritten query rather than the same query re-executed. Both failures are invisible unless you are watching closely enough to catch them.
 
-## A worked example
+## What would fix it
 
-Consider evaluating a set of institutional research outputs across multiple dimensions — scope, rigour, influence, novelty. A single prompt asking for a holistic assessment of fifty papers will produce something superficial and difficult to audit.
+Moving the analytical layer to BigQuery would solve most of the power and reproducibility problems. A cleaner hand-off between the corpus builder and the analytical layer — passing the corpus rather than reconstructing it — would remove the sampling failure mode. The laziness where it shortcuts may be a symptom of working in-context rather than against a persistent data store; GBQ execution would change that constraint.
 
-A project-based approach structures this differently. The standing brief defines the evaluation dimensions and the standard of evidence required for each. A spreadsheet of outputs is uploaded as a persistent artefact. Session one decomposes the evaluation into dimension-specific sub-tasks and produces a template for structured assessment. Session two applies the template to the first ten outputs and flags inconsistencies in the data. Session three revises the template based on what session two revealed and continues the assessment. Each session builds on the last. The project accumulates both outputs and refinements to the method.
-
-The result after several sessions is not a single answer but a traceable analytical process: dimension definitions, assessment records, noted exceptions, revised instructions. This is closer to governed workflow than to chatbot interaction.
-
-## Limits
-
-Projects do not enforce structure. Nothing prevents the analyst from abandoning the standing brief, contradicting prior outputs, or allowing context to drift. Persistence is availability, not discipline. The semi-structured quality depends entirely on how the analyst maintains the project over time.
-
-Context windows remain finite. A project with many uploaded artefacts and long conversation history will eventually hit limits. Artefact management — what to keep, what to summarise, what to archive — becomes part of the workflow itself.
-
-The model does not know that it is in a workflow. It has no concept of session boundaries, completion criteria, or methodological obligations beyond what the standing brief states. Governance is external: the analyst must enforce consistency, check outputs against prior sessions, and decide when the workflow is complete.
-
-Projects are a useful infrastructure for analytical work that extends beyond a single sitting. They are not a substitute for method. The standing brief must encode enough structure to keep the work coherent; the analyst must maintain enough discipline to make persistence valuable rather than confusing.
+The pattern itself — structured files as workflow steps, Projects as an orchestration layer — is not well documented. It works, with steering. Whether it scales depends on what replaces the in-context analytical layer.
 
 ---
 
-*Polished.*
+*Workflow pattern documented. Full prompt logic and project file structure not public.*

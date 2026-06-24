@@ -3,77 +3,38 @@ title: AI metascientist
 type: method
 ---
 
-# AI metascientist: a method for structured, guided analysis of research systems
+# The AI metascientist
 
-A method that uses AI to decompose, route, and structure the analysis of research and knowledge production.
+The AI metascientist is a governed analytics framework for conversational bibliometrics. The core claim is about separation of concerns: interpretation, scoping, and execution are kept as distinct layers rather than collapsed into a single model handling everything at once. The governance comes from that architecture, not from any particular model's capability.
 
-## What it is
+## The problem it addresses
 
-AI metascientist is a method for analysing and evaluating research systems through AI-mediated, structured reasoning. It operates at the level of knowledge production rather than individual outputs alone, treating research as a system of artefacts, practices, and relationships.
+Generalist LLMs asked to perform bibliometric analysis will produce fluent, methodologically plausible output that fails in ways invisible to non-experts. They hallucinate database fields, apply metrics outside their valid conditions, compare across fields on raw counts, and — more fundamentally — accept poorly formed questions without flagging that the construct is incoherent. The failure mode is not that the model produces errors; it is that the errors look like results.
 
-The method does not replace researchers or analysts. Its role is to formalise and carry methodological and technical knowledge within the analytical process. AI is used to structure reasoning, guide analytical choices, and make intermediate steps explicit, allowing complex analyses to be conducted in a more accessible and inspectable way.
+Adding more instructions to the prompt does not fix this. Each instruction protects against one failure mode while making the prompt more brittle, and the failure modes that matter most are the ones not yet anticipated. The protection scales linearly with foresight, which is the wrong shape for a problem where the dangerous failures are the unanticipated ones.
 
-## How it works
+## The method
 
-The method is organised into a set of coordinated stages:
+The AI metascientist addresses this by placing AI at the boundary of the analytics rather than at its centre. Three layers, each with a distinct role:
 
-- decomposition of research questions or outputs into analysable units  
-- routing to appropriate analytical workflows based on context and intent  
-- application of structured evaluation steps aligned with domain-specific norms  
-- aggregation of intermediate results into interpretable outputs  
-- encoding of the analytical process as a reproducible workflow  
+The first layer handles interpretation: AI guides a non-expert user through scoping the analysis in natural language, identifying which workflow will answer their question and what inputs it requires.
 
-These stages are supported by contextual information, such as institutional data, prior analyses, or defined peer groups, which can persist across analyses. The outcome is not a single answer but a structured analytical process that can be inspected, repeated, and adapted.
+The second layer handles scoping: deterministic steps constrain what the user can ask and how the corpus is constructed. This is where methodological rules are enforced — normalisation requirements, valid metric conditions, corpus definition constraints — rather than suggested.
 
-Full implementation details, including workflows and internal logic, are not public.
+The third layer handles execution: predefined analytical workflows, each with its own contextualisation rules and output logic. The report the user receives assembles selected blocks from those workflows; it is not generated freely from the model's parametric knowledge.
 
-## What it operates on
+The result is reproducible and auditable: the same inputs produce the same outputs, and the choices made at each layer are inspectable.
 
-The method operates on knowledge artefacts and systems, including:
+## What it is not
 
-- publications and other scholarly outputs  
-- datasets and derived indicators  
-- institutional or strategic documents  
-- AI-generated content and analytical results  
+The AI metascientist is not a chatbot with bibliometric documentation. It is not a co-pilot that suggests what analysts have previously done. It is not a system that relies on the model's judgment to enforce methodological validity — judgment that shifts between model versions and fails silently when it fails at all.
 
-It is not limited to text. It applies to structured and semi-structured representations of research activity and evaluation.
+The distinction that matters is where methodological authority sits. In suggestive systems it sits with the user, who must know enough to catch what the model gets wrong. In the AI metascientist it sits in the workflow infrastructure, which enforces admissibility conditions before execution rather than recommending them after the fact.
 
-## Why it is needed
+## Status
 
-Traditional bibliometric approaches are constrained by fixed indicators and often require substantial methodological expertise to apply appropriately. At the same time, unstructured use of AI tends to produce outputs that are difficult to reproduce, inspect, or validate.
+The framework has moved through a proof-of-concept phase, including a Claude Projects implementation across three coordinated projects: a corpus builder, an analytical workflow layer, and a report checker. A fuller technical treatment is available in the Substack series [Conversational bibliometrics needs a recipe, not just ingredients](/notes/) and [The AI metascientist: designing the kitchen](/notes/).
 
-AI metascientist addresses this gap by combining structured evaluation with AI-mediated reasoning. It enables analyses that are methodologically grounded while making their underlying steps more visible and repeatable.
+---
 
-## Example
-
-A set of institutional research outputs is analysed to assess international reach.
-
-The method:
-- identifies relevant outputs and constructs a corpus  
-- applies field-appropriate norms to account for disciplinary differences  
-- evaluates patterns of collaboration and dissemination  
-- produces a structured summary of international engagement across units  
-
-The output is a multi-part result showing differences across fields and units, together with the steps used to derive them.
-
-This example is simplified and does not represent full implementation.
-
-## Interpretation
-
-Outputs are structured and process-based rather than definitive conclusions. They support reasoning by making analytical steps, assumptions, and methodological choices visible. Results are intended to be inspected, compared, and reused, not treated as final or authoritative on their own.
-
-## Scope and limits
-
-The method depends on the quality and completeness of input data, as well as on the validity of the methodological assumptions embedded within it. AI-mediated reasoning introduces risks of misinterpretation or inappropriate method selection when context is incomplete or ambiguous.
-
-While the method structures and guides analysis, it does not remove the need for expert judgement. Outputs may be over-interpreted if they are treated as definitive rather than conditional on their inputs and assumptions.
-
-## Related work
-
-The method connects to frameworks such as GRID+, which decompose evaluation into explicit dimensions, and to tools such as AVA, which support structured validation of outputs. It also aligns with work that treats analytical workflows as reproducible processes rather than one-off results.
-
-## Depth
-
-- overview: available  
-- methodological detail: partial  
-- full protocol and implementation: not public  
+*Conceptual framework public. Workflow logic, scoring, and orchestration detail not public.*

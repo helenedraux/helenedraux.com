@@ -3,61 +3,28 @@ title: GRID+
 type: framework
 ---
 
-# GRID+: a structured framework for multi-dimensional research evaluation
+# GRID+
 
-A framework for transforming qualitative prompts into structured, repeatable evaluation pipelines.
+GRID and its successor ROR give every research organisation a persistent identifier and a type. The type field is the problem. It conflates two different things — governance structure (government, private, NGO) and organisational purpose (healthcare, education, archive) — into a single flat category that answers neither question cleanly. An analyst asking "where is AI research happening, and who controls those organisations?" cannot get there from GRID types. The categories were convenient to curate, not designed to support analytical questions.
 
-## Purpose
+GRID+ is a multi-facet classification framework built to replace that flat type with something analytically useful. It classifies each organisation across five dimensions: legal structure, funding source, governance, territory served, and primary role. Each dimension is independent; an organisation's legal structure does not determine its primary role, and its funding source does not determine its governance. The combination of facets supports the questions analysts actually ask — about funding flows, decision-making authority, geographic scope, and organisational function — rather than the questions that were easy to answer from a name and a website.
 
-GRID+ addresses the instability and opacity of prompt-based evaluation using large language models. Prompt-driven assessments are often difficult to reproduce, compare, or audit, and can be highly sensitive to phrasing and context. Existing evaluation approaches tend to rely either on rigid quantitative indicators or on loosely specified qualitative judgement. GRID+ is designed as a middle layer between these extremes: a structured, multi-dimensional framework that preserves interpretability while improving consistency and reuse.
+## Design principles
 
-## Structure
+Three principles distinguish GRID+ from ad hoc organisation typing. First, retrieved evidence over model memory: Wikipedia, Wikidata, and official public sources are the primary inputs for classification, with provenance recorded for every facet value. A model's parametric knowledge of an organisation is not a reliable source; public records are. Second, layered automation: deterministic rules handle high-confidence cases (ministries, universities, international bodies), small local models handle semantic verification and targeted repair, and frontier models handle only the cases that remain unresolved after earlier layers. Third, GRID hierarchy as structure: parent-child relationships in GRID are used to support control jurisdiction and inheritance rules, not ignored.
 
-| Dimension | Description |
-| --- | --- |
-| G | General characteristics of the research output, such as scope, type, or positioning |
-| R | Research quality and rigour, including methods, validity, and robustness |
-| I | Influence or impact, including scholarly, societal, or translational reach |
-| D | Directionality or novelty, including originality, risk, or divergence from existing work |
-| + | Extension layer for context-specific dimensions, adjustments, or refinements |
+The result is reproducible in a way that human curation is not. A human curator classifying thousands of organisations will be inconsistent across sessions, influenced by the order in which organisations appear, and unable to document the reasoning behind each decision. Deterministic rules and explicitly documented classification logic produce the same output on rerun and make the reasoning inspectable.
 
-The framework is modular. The four core dimensions provide a baseline structure, while the extension layer allows adaptation to domain, dataset, or evaluation objective.
+## Applications
 
-## From prompt to pipeline
+The first application was a funder classifier: 7,500 organisations extracted from publication acknowledgements, classified across the five facets, and used to map national research funding ecosystems into six patterns — direct state, agency-mediated, institutional, hybrid, philanthropy-visible, and low differentiation. That work is documented in the Substack piece [Mapping the global funding landscape](/notes/).
 
-GRID+ formalises a shift from single, unstructured prompts to decomposed evaluation workflows. Rather than asking a model to produce a holistic judgement in one step, evaluation is distributed across explicit dimensions, each treated as a separate analytical operation. This creates a pipeline in which reasoning is segmented, outputs are structured, and intermediate assessments can be inspected, compared, and reused. The result is a system that is less sensitive to prompt variation and better suited to reproducible evaluation.
+The broader GRID+ framework extends this to all research organisations appearing in publication affiliations, not just funders. The goal is to support questions about where research is performed, under what governance, and with what funding structure — across the full population of organisations in the scholarly record. That work was interrupted before the classification pipeline was fully wired.
 
-## How it is applied
+## Status
 
-Application follows a staged process. A set of research outputs is first selected, such as publications, projects, or other research artefacts. Each output is then assessed across the GRID+ dimensions using prompts or instructions defined for each dimension rather than for the object as a whole. The results are captured in a structured format, producing a multi-dimensional profile for each item. These profiles can then be compared, aggregated, or analysed further depending on the evaluation objective.
+The funder classifier is complete and validated against a stratified sample of 80 organisations, of which 69 were correctly classified and 11 remained ambiguous — most of the ambiguous cases reflecting genuine dual roles rather than classification error. The broader affiliation classifier is in setup phase: scope builder, evidence retrieval, and evidence audit are in place; facet classification is not yet wired.
 
-## Worked example
+---
 
-| Output | G | R | I | D |
-| --- | --- | --- | --- | --- |
-| Paper A | Broad interdisciplinary scope | Strong methodological clarity | Moderate citation uptake | High conceptual novelty |
-| Paper B | Narrow domain focus | Moderate rigour | High policy relevance | Low novelty |
-
-This example is simplified and does not represent full implementation.
-
-## Interpretation
-
-GRID+ outputs are inherently multi-dimensional. They are not intended to be collapsed into a single composite score. Instead, they support comparative reasoning across dimensions, making differences in profile explicit, such as high novelty with limited uptake, or strong influence with lower originality. This allows evaluation to remain differentiated rather than flattened into aggregate indicators.
-
-## Scope and limits
-
-The framework depends on the quality and completeness of the underlying data. Dimension definitions introduce an element of interpretation, especially for concepts such as novelty, influence, or directionality. Results may not transfer directly across domains without adaptation through the extension layer. Decomposing evaluation into dimensions improves clarity, but it can also reduce coherence if interactions between dimensions are ignored.
-
-## Implementation status
-
-Full scoring logic, pipelines, and operational details are not public.
-
-## Related work
-
-GRID+ is related to broader efforts to structure LLM-based reasoning into explicit workflows rather than single prompts. It also connects to work on AI-assisted metascience, evaluation systems, and validation tools such as AVA, where assessment is decomposed into inspectable stages.
-
-## Depth
-
-- overview: available  
-- methodological detail: partial  
-- full protocol and implementation: not public 
+*Framework and taxonomy public at the conceptual level. Classification rules, prompt logic, and pipeline implementation not public.*

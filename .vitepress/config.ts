@@ -5,6 +5,7 @@ export default defineConfig({
   title: 'research systems',
   description: 'methods for knowledge and evaluation',
   cleanUrls: true,
+  srcExclude: ['**/_drafts/**'],
 
   themeConfig: {
     nav: [
