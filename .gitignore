@@ -2,3 +2,5 @@ node_modules/
 .vitepress/cache/
 .vitepress/dist/
 _drafts/
+_review/
+.DS_Store

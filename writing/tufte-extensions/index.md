@@ -15,6 +15,10 @@ The bumped stacked bar came from a different problem: composition over time when
 
 The bumped stacked bar keeps the stacked bar structure but changes the order of the segments at each time point. Instead of fixing the stack order across the full series, it ranks the segments by value within each period and stacks them accordingly. A category rising through the stack is therefore visibly rising in rank, while the bar still preserves the total and the part-to-whole relationship. The stacking order carries meaning rather than acting as a fixed layout convention.
 
+<ClientOnly>
+  <BumpedStackedBar />
+</ClientOnly>
+
 This is not a general replacement for stacked bars. If the question is mainly composition, a standard stacked bar may be enough. If the question is mainly rank, a bump chart may be cleaner. I use the bumped version when the analytical problem sits between the two, and when separating the views would make the reader do the integration manually.
 
 The bumped stacked bar appeared in public reports, but I have not seen it implemented in Datawrapper or other common chart tools. This page is its first standalone documentation.

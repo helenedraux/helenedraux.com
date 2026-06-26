@@ -5,7 +5,7 @@ export default defineConfig({
   title: 'Hélène Draux',
   description: 'methods for knowledge and evaluation',
   cleanUrls: true,
-  srcExclude: ['**/_drafts/**'],
+  srcExclude: ['**/_drafts/**', '**/_review/**'],
 
   themeConfig: {
     docFooter: {
@@ -14,72 +14,55 @@ export default defineConfig({
     },
 
     nav: [
-      { text: 'Pipelines', link: '/pipelines/' },
-      { text: 'Tools', link: '/tools/' },
-      { text: 'Writing', link: '/writing/' },
-      { text: 'Archive', link: '/archive/' },
-      { text: 'Notes', link: '/notes/' },
-      { text: 'About', link: '/about/' },
+      { text: 'Home', link: '/' },
+      { text: 'AI analytics', link: '/ai-analytics/', activeMatch: '^/ai-analytics/' },
+      { text: 'Evaluation', link: '/evaluation/', activeMatch: '^/evaluation/' },
+      { text: 'Writing', link: '/writing/', activeMatch: '^/writing/' },
+      { text: 'Builds', link: '/builds/', activeMatch: '^/builds/' },
+      { text: 'Contact', link: '/cv/' },
     ],
 
     sidebar: {
-      '/pipelines/': [
+      '/ai-analytics/': [
         {
-          text: 'Pipelines',
+          text: 'AI analytics',
           items: [
-            { text: 'Journalscape', link: '/pipelines/journalscape/' },
-            { text: 'GRID+', link: '/pipelines/grid-plus/' },
-            { text: 'Biblioscope', link: '/pipelines/biblioscope/' },
-          ]
-        }
+            { text: 'The AI metascientist', link: '/ai-analytics/ai-metascientist/' },
+            { text: 'Corpus builder', link: '/ai-analytics/corpus-builder/' },
+            { text: 'Biblioscope', link: '/ai-analytics/biblioscope/' },
+            { text: 'GRID+', link: '/ai-analytics/grid-plus/' },
+            { text: 'Journalscape', link: '/ai-analytics/journalscape/' },
+            { text: 'DimQuery', link: '/ai-analytics/dimquery/' },
+            { text: 'BiblioFlow', link: '/ai-analytics/biblioflow/' },
+          ],
+        },
       ],
-      '/tools/': [
+      '/evaluation/': [
         {
-          text: 'Tools',
+          text: 'Evaluation',
           items: [
-            { text: 'AV|VA', link: '/tools/av-va/' },
-            { text: 'DimQuery', link: '/tools/dimquery/' },
-            { text: 'Loom', link: '/tools/loom/' },
-            { text: 'Kids voice assistant', link: '/tools/kids-voice-assistant/' },
-            { text: 'Claude Projects as workflows', link: '/tools/claude-projects-workflows/' },
-          ]
-        }
+            { text: 'AV|VA', link: '/evaluation/av-va/' },
+          ],
+        },
       ],
       '/writing/': [
         {
           text: 'Writing',
           items: [
-            { text: 'AI metascientist', link: '/writing/ai-metascientist/' },
-            { text: 'BiblioFlow', link: '/writing/biblioflow/' },
+            { text: 'Research Musings', link: '/writing/research-musings/' },
             { text: 'Tufte\'s extensions', link: '/writing/tufte-extensions/' },
             { text: 'Interviewing yourself', link: '/writing/interviewing-yourself/' },
-          ]
-        }
+          ],
+        },
       ],
-      '/archive/': [
+      '/builds/': [
         {
-          text: 'Archive',
+          text: 'Builds',
           items: [
-            { text: 'Building a network', link: '/archive/building-a-network/' },
-            { text: 'Tropical Neglected Diseases', link: '/archive/tropical-neglected-diseases/' },
-            { text: 'NLP of a Facebook page', link: '/archive/nlp-facebook-page/' },
-          ]
-        }
-      ],
-      '/notes/': [
-        { text: 'Notes', items: [] }
-      ],
-      '/about/': [
-        {
-          text: 'About',
-          items: [
-            { text: 'Approach', link: '/about/approach/' },
-            { text: 'Background', link: '/about/background/' },
-            { text: 'CV', link: '/about/cv/' },
-            { text: 'Contact', link: '/about/contact/' },
-            { text: 'References', link: '/about/references/' },
-          ]
-        }
+            { text: 'Loom', link: '/builds/loom/' },
+            { text: 'Kids voice assistant', link: '/builds/kids-voice-assistant/' },
+          ],
+        },
       ],
     },
 
