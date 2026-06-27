@@ -78,13 +78,31 @@ export const sections: Record<string, Section> = {
   evaluation: {
     title: 'Evaluation',
     intro:
-      'I have built this as a companion to my work with AI, with the principle that not all interactions need to be validated and verified in the same way. AV|VA is the framework I built for that — separating validation (was this the right question to ask?) from verification (does the answer hold up?), and scaling scrutiny to what happens if the output is wrong rather than checking everything the same way. This is meant to feed into my further work as I build more AI-assisted analytics and data enhancement.',
+      '<p>Working with AI for analytics, I can\'t assume an output will be reliable on the first turn. Part of my answer is to <a href="/ai-analytics/corpus-builder/">work slowly</a>; the other part is to build in systematic validation of the input and verification of the output, rather than trusting either by default.</p><p>This section collects that thinking, in four pieces:</p><ul><li>The <strong>vacuity index</strong> is an experiment I wrote for <em>Research Musings</em>, and the inspiration behind validating the input in AV|VA.</li><li><strong>AV|VA</strong> is the framework the rest grew around: a proposition for proportionate validation and verification, scaled to what the LLM is being used for and what the task actually requires.</li><li>The <strong>verification comparison</strong> is a simplified methodology I built at work to decide which LLM we should keep internally, and to show that an AI output isn\'t to be trusted on the first turn, however fluent it reads.</li><li><strong>Red-teaming an analytical agent</strong> is what I check when the user is adversarial rather than honest: whether a system holds its methodological and commercial integrity under pressure, not just its credentials.</li></ul>',
     cards: [
+      {
+        title: 'Vacuity index',
+        link: '/evaluation/vacuity-index/',
+        description:
+          'An experiment I wrote for Research Musings, and the inspiration behind validating the input in AV|VA.',
+      },
       {
         title: 'AV|VA',
         link: '/evaluation/av-va/',
         description:
-          'Separating validation from verification and scaling scrutiny to risk.',
+          'The framework those two cases sit around: a proposition for proportionate validation and verification, scaled to what the LLM is being used for and what the task actually requires.',
+      },
+      {
+        title: 'Verification comparison',
+        link: '/evaluation/verification-comparison/',
+        description:
+          'A simplified methodology I built at work to decide which LLM we should keep internally and to show that an AI output isn\'t to be trusted on the first turn, however fluent it reads.',
+      },
+      {
+        title: 'Red-teaming an analytical agent',
+        link: '/evaluation/red-teaming/',
+        description:
+          'Red-teaming a pre-launch analytical agent — and the dimensions standard probes miss: whether it keeps its methodological and commercial integrity, not just its secrets.',
       },
     ],
   },
