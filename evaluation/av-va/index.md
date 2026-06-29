@@ -13,7 +13,11 @@ However, AI checking every single output does not necesseraly make sense: a priv
 After my experience related in the Vacuity Index _Research musings_, I realised validation of the question should be added in analytics especially: is the task well formed, does the construct make sense, should this question be answered in this form at all? 
 
 <p class="diagram">
-  <img src="/diagrams/av_va_risk_routing.svg" alt="AV|VA validation and verification with risk-proportional routing" />
+  <ColorModeImage
+    light="/diagrams/av_va_risk_routing_light.svg"
+    dark="/diagrams/av_va_risk_routing_dark.svg"
+    alt="Validation and verification with risk-proportional routing"
+  />
 </p>
 
 For now, AV|VA asks four questions: what kind of task did the AI do, what the output will be used for, what happens if it is wrong, and whether the answer can be checked against a source. Those answers produce a risk level and a corresponding verification route.
