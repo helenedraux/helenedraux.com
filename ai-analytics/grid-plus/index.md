@@ -7,6 +7,15 @@ type: framework
 
 I built GRID+ because the organisation type field I had available was not giving me the distinctions I needed for research analysis. GRID and ROR identify research organisations and assign a type, but a single flat category does not tell me enough about how an organisation works. A government research institute, a public hospital, a ministry, a university, a private company, and an international organisation can all appear in research data, but the questions I wanted to ask were not only “what kind of organisation is this?” They were about legal form, funding, governance, territory served, and role in the research system.
 
+<p class="diagram">
+  <ColorModeImage
+    light="/diagrams/grid_pipeline_light.svg"
+    dark="/diagrams/grid_pipeline_dark.svg"
+    alt="GRID+ classification pipeline"
+  />
+</p>
+
+
 When the analysis moves from counting organisations to interpreting research systems, a single type field starts doing too much work. To understand where AI research happens, who controls the organisations involved, how funding ecosystems differ across countries, or whether a national system relies mainly on ministries, agencies, universities, philanthropic bodies, or institutional funding, I need more than one label. I need a classification that can keep legal form, funding, governance, territory, and role separate long enough for the relationships between them to become visible.
 
 GRID+ classifies organisations across five dimensions: legal structure, funding source, governance, territory served, and primary role. I kept the dimensions separate because I did not want one answer to determine the others. An organisation’s legal structure does not automatically tell me its funding source; its funding source does not automatically tell me who governs it; its primary role in the research system may not align neatly with either. The useful information sits in the combination.

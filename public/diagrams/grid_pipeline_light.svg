@@ -1,0 +1,81 @@
+<svg width="100%" viewBox="0 0 680 640" xmlns="http://www.w3.org/2000/svg" role="img" style="background:#FFFFFF">
+<title>GRID+ classification pipeline</title>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#737470" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<!-- Column headers -->
+<text x="100" y="22" text-anchor="middle" font-family="serif" font-size="12" letter-spacing="0.06em" font-weight="500" fill="#3D3D3A">Python</text>
+<text x="340" y="22" text-anchor="middle" font-family="serif" font-size="12" letter-spacing="0.06em" font-weight="500" fill="#3D3D3A">Local model</text>
+<text x="580" y="22" text-anchor="middle" font-family="serif" font-size="12" letter-spacing="0.06em" font-weight="500" fill="#3D3D3A">Frontier LLM</text>
+
+<!-- Column guide lines -->
+<line x1="100" y1="28" x2="100" y2="555" stroke="#C9C7C1" stroke-width="0.5" stroke-dasharray="3 4"/>
+<line x1="340" y1="28" x2="340" y2="555" stroke="#C9C7C1" stroke-width="0.5" stroke-dasharray="3 4"/>
+<line x1="580" y1="28" x2="580" y2="555" stroke="#C9C7C1" stroke-width="0.5" stroke-dasharray="3 4"/>
+
+<!-- Step 1: Python deterministic -->
+<rect x="40" y="36" width="120" height="56" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<text x="100" y="58" text-anchor="middle" font-family="serif" font-size="13" font-weight="600" fill="#3C3489">1 · Deterministic</text>
+<text x="100" y="76" text-anchor="middle" font-family="serif" font-size="11" fill="#534AB7">Name-based rules</text>
+<text x="100" y="108" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">Ministries, universities,</text>
+<text x="100" y="122" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">international bodies</text>
+
+<!-- Arrow 1→2 -->
+<line x1="160" y1="64" x2="218" y2="64" stroke="#737470" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Step 2: SLM semantic verification -->
+<rect x="220" y="36" width="240" height="56" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="340" y="58" text-anchor="middle" font-family="serif" font-size="13" font-weight="600" fill="#085041">2 · Semantic verification</text>
+<text x="340" y="76" text-anchor="middle" font-family="serif" font-size="11" fill="#0F6E56">SLM as domain-aware auditor</text>
+<text x="340" y="108" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">Country-specific context</text>
+<text x="340" y="122" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">supplied to model</text>
+
+<!-- Arrow 2→3 -->
+<line x1="340" y1="92" x2="340" y2="166" stroke="#737470" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Step 3: SLM targeted repair -->
+<rect x="220" y="168" width="240" height="56" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="340" y="190" text-anchor="middle" font-family="serif" font-size="13" font-weight="600" fill="#085041">3 · Targeted repair</text>
+<text x="340" y="208" text-anchor="middle" font-family="serif" font-size="11" fill="#0F6E56">SLM corrects flagged fields only</text>
+<text x="340" y="238" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">e.g. university marked for-profit</text>
+<text x="340" y="252" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">rechecked and cleared</text>
+
+<!-- Arrow 3→4 -->
+<line x1="222" y1="196" x2="162" y2="270" stroke="#737470" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Step 4: Python schema enforcement -->
+<rect x="40" y="272" width="120" height="56" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<text x="100" y="294" text-anchor="middle" font-family="serif" font-size="13" font-weight="600" fill="#3C3489">4 · Validation</text>
+<text x="100" y="312" text-anchor="middle" font-family="serif" font-size="11" fill="#534AB7">Schema enforcement</text>
+<text x="100" y="342" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">Normalises drift from</text>
+<text x="100" y="356" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">small models</text>
+
+<!-- 90% coverage callout -->
+<rect x="40" y="376" width="420" height="40" rx="6" fill="none" stroke="#C9C7C1" stroke-width="0.5" stroke-dasharray="4 3"/>
+<text x="250" y="392" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">~90% coverage after steps 1–4 across most classification dimensions</text>
+<text x="250" y="408" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">Uncertainty is explicitly allowed and repaired in later passes</text>
+
+<!-- Arrow 4→5 -->
+<line x1="160" y1="300" x2="458" y2="428" stroke="#737470" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Step 5: LLM selective patching -->
+<rect x="460" y="430" width="180" height="56" rx="6" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text x="550" y="452" text-anchor="middle" font-family="serif" font-size="13" font-weight="600" fill="#633806">5 · Selective patching</text>
+<text x="550" y="470" text-anchor="middle" font-family="serif" font-size="11" fill="#854F0B">LLM for unresolved fields</text>
+<text x="550" y="500" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">Restricted to cases where</text>
+<text x="550" y="514" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">uncertainty remains</text>
+
+<!-- Arrow 5→6 -->
+<line x1="550" y1="486" x2="550" y2="526" stroke="#737470" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Step 6: LLM-as-judge -->
+<rect x="460" y="528" width="180" height="56" rx="6" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text x="550" y="550" text-anchor="middle" font-family="serif" font-size="13" font-weight="600" fill="#633806">6 · LLM-as-judge</text>
+<text x="550" y="568" text-anchor="middle" font-family="serif" font-size="11" fill="#854F0B">Stratified spot-check</text>
+
+<!-- Validation note -->
+<text x="340" y="618" text-anchor="middle" font-family="serif" font-size="11" fill="#3D3D3A">69 / 80 correctly classified · 11 ambiguous, most reflecting genuine dual roles</text>
+</svg>
