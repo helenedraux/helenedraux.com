@@ -19,7 +19,7 @@ export default defineConfig({
       { text: 'Evaluation', link: '/evaluation/', activeMatch: '^/evaluation/' },
       { text: 'Writing', link: '/writing/', activeMatch: '^/writing/' },
       { text: 'Builds', link: '/builds/', activeMatch: '^/builds/' },
-      { text: 'Contact', link: '/cv/' },
+      { text: 'CV', link: '/cv/' },
     ],
 
     sidebar: {
