@@ -3,6 +3,7 @@ import DefaultTheme from 'vitepress/theme'
 import StatusBadge from './components/StatusBadge.vue'
 import SectionLanding from './components/SectionLanding.vue'
 import BumpedStackedBar from './components/BumpedStackedBar.vue'
+import ColorModeImage from './components/ColorModeImage.vue'
 import Layout from './Layout.vue'
 import { redirects } from './redirects'
 import './custom.css'
@@ -14,6 +15,7 @@ export default {
     app.component('StatusBadge', StatusBadge)
     app.component('SectionLanding', SectionLanding)
     app.component('BumpedStackedBar', BumpedStackedBar)
+    app.component('ColorModeImage', ColorModeImage)
     const applyRedirect = (path: string) => {
       const normalized = path.replace(/\.html$/i, '')
       const toPath = redirects[normalized]

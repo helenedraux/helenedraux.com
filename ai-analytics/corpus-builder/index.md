@@ -10,7 +10,11 @@ outline: false
 Claude Projects as analytical workflows
 
 <p class="diagram">
-  <img src="/diagrams/corpus_builder_linear.svg" alt="Corpus builder workflow" />
+  <ColorModeImage
+    light="/diagrams/corpus_builder_linear_light.svg"
+    dark="/diagrams/corpus_builder_linear_dark.svg"
+    alt="Corpus builder workflow"
+  />
 </p>
 
 
