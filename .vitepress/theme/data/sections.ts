@@ -43,7 +43,7 @@ export const sections: Record<string, Section> = {
       },
       {
         group: 'Conversational bibliometrics',
-        title: 'BiblioFlow',
+        title: 'Biblioflow',
         link: '/ai-analytics/biblioflow/',
         description:
           'Design for a local, governed bibliometric workflow system.',

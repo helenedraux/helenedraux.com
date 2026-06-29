@@ -1,105 +1,521 @@
-<svg width="100%" viewBox="120 0 515 712" role="img" xmlns="http://www.w3.org/2000/svg">
-<title>The AI metascientist — governed architecture</title>
-<desc>Conversational interpretation sits at the border as the only AI layer; a governed analytical core (orchestrator, workflow library, deterministic query compiler, MCP gateway) holds methodological authority in rules; validation and human gates check the result before it returns to the user.</desc>
-<defs>
-<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</marker>
-<style>
-text{font-family:"Anthropic Sans",-apple-system,system-ui,"Segoe UI",sans-serif;}
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="100%"
+   viewBox="120 0 515 712"
+   role="img"
+   version="1.1"
+   id="svg29"
+   sodipodi:docname="ai_metascientist_architecture_dark.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview29"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0340897"
+     inkscape:cx="150.3738"
+     inkscape:cy="311.8685"
+     inkscape:window-width="1312"
+     inkscape:window-height="916"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg29" />
+  <title
+     id="title1">The AI metascientist — governed architecture</title>
+  <desc
+     id="desc1">Conversational interpretation sits at the border as the only AI layer; a governed analytical core (orchestrator, workflow library, deterministic query compiler, MCP gateway) holds methodological authority in rules; validation and human gates check the result before it returns to the user.</desc>
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M2 1L8 5L2 9"
+         fill="none"
+         stroke="context-stroke"
+         stroke-width="1.5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path1" />
+    </marker>
+    <style
+       id="style1">
+text{font-family:&quot;Anthropic Sans&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,sans-serif;}
 .ttl{font-size:14px;font-weight:500;text-anchor:middle;}
 .sub{font-size:12px;font-weight:400;text-anchor:middle;}
 .sm{font-size:11px;font-weight:400;}
 .nt{font-size:10px;font-weight:400;}
 .ln{fill:none;stroke:#888780;stroke-width:1.5px;}
 </style>
-</defs>
-
-<!-- header -->
-<text x="340" y="28" class="ttl" fill="#E8E6DC">The AI metascientist</text>
-<text x="340" y="46" class="sub" fill="#B4B2A9">interpretation at the border · governed analytical core · validated execution</text>
-
-<!-- legend -->
-<rect x="150" y="59" width="12" height="12" rx="3" fill="#CECBF6" stroke="#AFA9EC" stroke-width="0.5"/>
-<text x="167" y="69" class="sm" fill="#B4B2A9">AI layer</text>
-<rect x="258" y="59" width="14" height="12" rx="6" fill="#412402" stroke="#FAC775" stroke-width="0.5"/>
-<text x="277" y="69" class="sm" fill="#B4B2A9">human gate</text>
-<rect x="392" y="59" width="12" height="12" rx="3" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
-<text x="409" y="69" class="sm" fill="#B4B2A9">governed core</text>
-
-<!-- USER -->
-<rect x="250" y="92" width="180" height="44" rx="6" fill="#2C2C2A" stroke="#888780" stroke-width="0.5"/>
-<text x="340" y="110" class="ttl" fill="#B4B2A9" dominant-baseline="central">User</text>
-<text x="340" y="126" class="sub" fill="#888780" dominant-baseline="central">natural-language question</text>
-<line x1="340" y1="136" x2="340" y2="150" class="ln" marker-end="url(#arrow)"/>
-
-<!-- INTERPRETATION (AI) -->
-<text x="194" y="166" class="nt" fill="#AFA9EC" text-anchor="end">AI works only</text>
-<text x="194" y="178" class="nt" fill="#AFA9EC" text-anchor="end">here, at the border</text>
-<rect x="200" y="150" width="280" height="44" rx="6" fill="#CECBF6" stroke="#AFA9EC" stroke-width="0.5"/>
-<text x="340" y="168" class="ttl" fill="#CECBF6" dominant-baseline="central">Interpretation layer</text>
-<text x="340" y="184" class="sub" fill="#AFA9EC" dominant-baseline="central">interpret intent · route to a workflow</text>
-<line x1="340" y1="194" x2="340" y2="208" class="ln" marker-end="url(#arrow)"/>
-
-<!-- gate 1 -->
-<rect x="255" y="208" width="170" height="24" rx="12" fill="#412402" stroke="#FAC775" stroke-width="0.5"/>
-<text x="340" y="220" class="sub" fill="#FAC775" dominant-baseline="central">▷ confirm scope &amp; workflow</text>
-<line x1="340" y1="232" x2="340" y2="246" class="ln" marker-end="url(#arrow)"/>
-
-<!-- GOVERNED CORE container -->
-<rect x="140" y="246" width="400" height="246" rx="10" fill="#04342C" stroke="#5DCAA5" stroke-width="1" stroke-dasharray="4 3"/>
-<text x="340" y="264" class="sm" fill="#5DCAA5" text-anchor="middle">Governed analytical core — authority in rules, not fluency</text>
-
-<rect x="180" y="276" width="320" height="30" rx="6" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
-<text x="340" y="291" class="sub" fill="#9FE1CB" dominant-baseline="central">Orchestrator &amp; state · enforces stage hand-offs</text>
-<line x1="340" y1="306" x2="340" y2="318" class="ln" marker-end="url(#arrow)"/>
-
-<rect x="190" y="318" width="300" height="44" rx="6" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
-<text x="340" y="336" class="ttl" fill="#9FE1CB" dominant-baseline="central">Workflow library</text>
-<text x="340" y="352" class="sub" fill="#5DCAA5" dominant-baseline="central">formalised analytical recipes</text>
-<line x1="340" y1="362" x2="340" y2="374" class="ln" marker-end="url(#arrow)"/>
-
-<rect x="190" y="374" width="300" height="44" rx="6" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
-<text x="340" y="392" class="ttl" fill="#9FE1CB" dominant-baseline="central">Deterministic query compiler</text>
-<text x="340" y="408" class="sub" fill="#5DCAA5" dominant-baseline="central">schema-safe · rule-bound SQL</text>
-<line x1="340" y1="418" x2="340" y2="430" class="ln" marker-end="url(#arrow)"/>
-
-<rect x="190" y="430" width="300" height="44" rx="6" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="1"/>
-<text x="340" y="448" class="ttl" fill="#9FE1CB" dominant-baseline="central">MCP gateway</text>
-<text x="340" y="464" class="sub" fill="#5DCAA5" dominant-baseline="central">controlled · auditable data access</text>
-
-<!-- core -> data -->
-<line x1="340" y1="474" x2="340" y2="504" class="ln" marker-end="url(#arrow)"/>
-
-<!-- GOVERNED DATA -->
-<rect x="190" y="504" width="300" height="44" rx="6" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
-<g stroke="#5DCAA5" stroke-width="1" fill="none">
-<ellipse cx="213" cy="519" rx="8" ry="3"/>
-<path d="M205 519 V533"/><path d="M221 519 V533"/>
-<path d="M205 533 a8 3 0 0 0 16 0"/>
-</g>
-<text x="352" y="522" class="ttl" fill="#9FE1CB" dominant-baseline="central">Governed data — Dimensions · BigQuery</text>
-<text x="352" y="538" class="sub" fill="#5DCAA5" dominant-baseline="central">versioned snapshots · logged queries</text>
-<line x1="340" y1="548" x2="340" y2="562" class="ln" marker-end="url(#arrow)"/>
-
-<!-- VALIDATION -->
-<rect x="190" y="562" width="300" height="44" rx="6" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
-<text x="340" y="580" class="ttl" fill="#9FE1CB" dominant-baseline="central">Validation &amp; QA</text>
-<text x="340" y="596" class="sub" fill="#5DCAA5" dominant-baseline="central">result checked vs inputs &amp; assumptions</text>
-<line x1="340" y1="606" x2="340" y2="620" class="ln" marker-end="url(#arrow)"/>
-
-<!-- gate 2 -->
-<rect x="255" y="620" width="170" height="24" rx="12" fill="#412402" stroke="#FAC775" stroke-width="0.5"/>
-<text x="340" y="632" class="sub" fill="#FAC775" dominant-baseline="central">▷ review before release</text>
-<line x1="340" y1="644" x2="340" y2="658" class="ln" marker-end="url(#arrow)"/>
-
-<!-- OUTPUT -->
-<rect x="210" y="658" width="260" height="40" rx="6" fill="#2C2C2A" stroke="#888780" stroke-width="0.5"/>
-<text x="340" y="673" class="ttl" fill="#B4B2A9" dominant-baseline="central">Validated, documented result</text>
-<text x="340" y="687" class="sub" fill="#888780" dominant-baseline="central">traceable to every decision</text>
-
-<!-- return path to user -->
-<path d="M470 678 H560 Q600 678 600 638 V154 Q600 114 560 114 H432" class="ln" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
-<text x="615" y="400" class="sm" fill="#888780" text-anchor="middle" transform="rotate(-90 615 400)">validated answer returns to the user</text>
-
+  </defs>
+  <!-- header -->
+  <text
+     x="372"
+     y="28"
+     class="ttl"
+     fill="#e8e6dc"
+     id="text1">The AI metascientist</text>
+  <text
+     x="370"
+     y="46"
+     class="sub"
+     fill="#b4b2a9"
+     id="text2">interpretation at the border · governed analytical core · validated execution</text>
+  <!-- legend -->
+  <rect
+     x="150"
+     y="59"
+     width="12"
+     height="12"
+     rx="3"
+     fill="#CECBF6"
+     stroke="#AFA9EC"
+     stroke-width="0.5"
+     id="rect2" />
+  <text
+     x="167"
+     y="69"
+     class="sm"
+     fill="#B4B2A9"
+     id="text3">AI layer</text>
+  <rect
+     x="258"
+     y="59"
+     width="14"
+     height="12"
+     rx="6"
+     fill="#412402"
+     stroke="#FAC775"
+     stroke-width="0.5"
+     id="rect3" />
+  <text
+     x="277"
+     y="69"
+     class="sm"
+     fill="#B4B2A9"
+     id="text4">human gate</text>
+  <rect
+     x="392"
+     y="59"
+     width="12"
+     height="12"
+     rx="3"
+     fill="#9FE1CB"
+     stroke="#5DCAA5"
+     stroke-width="0.5"
+     id="rect4" />
+  <text
+     x="409"
+     y="69"
+     class="sm"
+     fill="#B4B2A9"
+     id="text5">governed core</text>
+  <!-- USER -->
+  <rect
+     x="250"
+     y="92"
+     width="180"
+     height="44"
+     rx="6"
+     fill="#2C2C2A"
+     stroke="#888780"
+     stroke-width="0.5"
+     id="rect5" />
+  <text
+     x="340"
+     y="110"
+     class="ttl"
+     fill="#B4B2A9"
+     dominant-baseline="central"
+     id="text6">User</text>
+  <text
+     x="340"
+     y="126"
+     class="sub"
+     fill="#888780"
+     dominant-baseline="central"
+     id="text7">natural-language question</text>
+  <line
+     x1="340"
+     y1="136"
+     x2="340"
+     y2="150"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line7" />
+  <!-- INTERPRETATION (AI) -->
+  <text
+     x="552.76965"
+     y="169.86813"
+     class="nt"
+     fill="#AFA9EC"
+     text-anchor="end"
+     id="text8"
+     style="fill:#cecbf6;fill-opacity:1">AI works only</text>
+  <text
+     x="579.84662"
+     y="181.86813"
+     class="nt"
+     fill="#AFA9EC"
+     text-anchor="end"
+     id="text9"
+     style="fill:#cecbf6;fill-opacity:1">here, at the border</text>
+  <rect
+     x="200"
+     y="150"
+     width="280"
+     height="44"
+     rx="6"
+     fill="#CECBF6"
+     stroke="#AFA9EC"
+     stroke-width="0.5"
+     id="rect9" />
+  <text
+     x="340"
+     y="168"
+     class="ttl"
+     fill="#CECBF6"
+     dominant-baseline="central"
+     id="text10"
+     style="fill:#800080">Interpretation layer</text>
+  <text
+     x="340"
+     y="184"
+     class="sub"
+     fill="#AFA9EC"
+     dominant-baseline="central"
+     id="text11"
+     style="fill:#7e72de;fill-opacity:1">interpret intent · route to a workflow</text>
+  <line
+     x1="340"
+     y1="194"
+     x2="340"
+     y2="208"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line11" />
+  <!-- gate 1 -->
+  <rect
+     x="255"
+     y="208"
+     width="170"
+     height="24"
+     rx="12"
+     fill="#412402"
+     stroke="#FAC775"
+     stroke-width="0.5"
+     id="rect11" />
+  <text
+     x="340"
+     y="220"
+     class="sub"
+     fill="#FAC775"
+     dominant-baseline="central"
+     id="text12">▷ confirm scope &amp; workflow</text>
+  <line
+     x1="340"
+     y1="232"
+     x2="340"
+     y2="246"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line12" />
+  <!-- GOVERNED CORE container -->
+  <rect
+     x="140"
+     y="246"
+     width="400"
+     height="246"
+     rx="10"
+     fill="#04342C"
+     stroke="#5DCAA5"
+     stroke-width="1"
+     stroke-dasharray="4 3"
+     id="rect12" />
+  <text
+     x="340"
+     y="264"
+     class="sm"
+     fill="#5DCAA5"
+     text-anchor="middle"
+     id="text13">Governed analytical core — authority in rules, not fluency</text>
+  <rect
+     x="180"
+     y="276"
+     width="320"
+     height="30"
+     rx="6"
+     fill="#9FE1CB"
+     stroke="#5DCAA5"
+     stroke-width="0.5"
+     id="rect13" />
+  <text
+     x="340"
+     y="291"
+     class="sub"
+     fill="#9FE1CB"
+     dominant-baseline="central"
+     id="text14"
+     style="fill:#008000">Orchestrator &amp; state · enforces stage hand-offs</text>
+  <line
+     x1="340"
+     y1="306"
+     x2="340"
+     y2="318"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line14" />
+  <rect
+     x="190"
+     y="318"
+     width="300"
+     height="44"
+     rx="6"
+     fill="#9FE1CB"
+     stroke="#5DCAA5"
+     stroke-width="0.5"
+     id="rect14" />
+  <text
+     x="340"
+     y="336"
+     class="ttl"
+     fill="#9FE1CB"
+     dominant-baseline="central"
+     id="text15"
+     style="fill:#008000">Workflow library</text>
+  <text
+     x="340"
+     y="352"
+     class="sub"
+     fill="#5DCAA5"
+     dominant-baseline="central"
+     id="text16"
+     style="fill:#008000">formalised analytical recipes</text>
+  <line
+     x1="340"
+     y1="362"
+     x2="340"
+     y2="374"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line16" />
+  <rect
+     x="190"
+     y="374"
+     width="300"
+     height="44"
+     rx="6"
+     fill="#9FE1CB"
+     stroke="#5DCAA5"
+     stroke-width="0.5"
+     id="rect16" />
+  <text
+     x="340"
+     y="392"
+     class="ttl"
+     fill="#9FE1CB"
+     dominant-baseline="central"
+     id="text17"
+     style="fill:#008000">Deterministic query compiler</text>
+  <text
+     x="340"
+     y="408"
+     class="sub"
+     fill="#5DCAA5"
+     dominant-baseline="central"
+     id="text18"
+     style="fill:#008000">schema-safe · rule-bound SQL</text>
+  <line
+     x1="340"
+     y1="418"
+     x2="340"
+     y2="430"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line18" />
+  <rect
+     x="190"
+     y="430"
+     width="300"
+     height="44"
+     rx="6"
+     fill="#9FE1CB"
+     stroke="#5DCAA5"
+     stroke-width="1"
+     id="rect18" />
+  <text
+     x="340"
+     y="448"
+     class="ttl"
+     fill="#9FE1CB"
+     dominant-baseline="central"
+     id="text19"
+     style="fill:#008000">MCP gateway</text>
+  <text
+     x="340"
+     y="464"
+     class="sub"
+     fill="#5DCAA5"
+     dominant-baseline="central"
+     id="text20"
+     style="fill:#008000">controlled · auditable data access</text>
+  <!-- core -> data -->
+  <line
+     x1="340"
+     y1="474"
+     x2="340"
+     y2="504"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line20" />
+  <!-- GOVERNED DATA -->
+  <rect
+     x="190"
+     y="504"
+     width="300"
+     height="44"
+     rx="6"
+     fill="#9FE1CB"
+     stroke="#5DCAA5"
+     stroke-width="0.5"
+     id="rect20" />
+  <text
+     x="336"
+     y="522"
+     class="ttl"
+     fill="#9FE1CB"
+     dominant-baseline="central"
+     id="text22"
+     style="fill:#008000">Governed data: Dimensions · BigQuery</text>
+  <text
+     x="352"
+     y="538"
+     class="sub"
+     fill="#5DCAA5"
+     dominant-baseline="central"
+     id="text23"
+     style="fill:#008000">versioned snapshots · logged queries</text>
+  <line
+     x1="340"
+     y1="548"
+     x2="340"
+     y2="562"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line23" />
+  <!-- VALIDATION -->
+  <rect
+     x="190"
+     y="562"
+     width="300"
+     height="44"
+     rx="6"
+     fill="#9FE1CB"
+     stroke="#5DCAA5"
+     stroke-width="0.5"
+     id="rect23" />
+  <text
+     x="340"
+     y="580"
+     class="ttl"
+     fill="#9FE1CB"
+     dominant-baseline="central"
+     id="text24"
+     style="fill:#008000">Validation &amp; QA</text>
+  <text
+     x="340"
+     y="596"
+     class="sub"
+     fill="#5DCAA5"
+     dominant-baseline="central"
+     id="text25"
+     style="fill:#008000">result checked vs inputs &amp; assumptions</text>
+  <line
+     x1="340"
+     y1="606"
+     x2="340"
+     y2="620"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line25" />
+  <!-- gate 2 -->
+  <rect
+     x="255"
+     y="620"
+     width="170"
+     height="24"
+     rx="12"
+     fill="#412402"
+     stroke="#FAC775"
+     stroke-width="0.5"
+     id="rect25" />
+  <text
+     x="340"
+     y="632"
+     class="sub"
+     fill="#FAC775"
+     dominant-baseline="central"
+     id="text26">▷ review before release</text>
+  <line
+     x1="340"
+     y1="644"
+     x2="340"
+     y2="658"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line26" />
+  <!-- OUTPUT -->
+  <rect
+     x="210"
+     y="658"
+     width="260"
+     height="40"
+     rx="6"
+     fill="#2C2C2A"
+     stroke="#888780"
+     stroke-width="0.5"
+     id="rect26" />
+  <text
+     x="340"
+     y="673"
+     class="ttl"
+     fill="#B4B2A9"
+     dominant-baseline="central"
+     id="text27">Validated, documented result</text>
+  <text
+     x="340"
+     y="687"
+     class="sub"
+     fill="#888780"
+     dominant-baseline="central"
+     id="text28">traceable to every decision</text>
+  <!-- return path to user -->
+  <path
+     d="M470 678 H560 Q600 678 600 638 V154 Q600 114 560 114 H432"
+     class="ln"
+     stroke-dasharray="5 4"
+     marker-end="url(#arrow)"
+     id="path28" />
+  <text
+     x="615"
+     y="400"
+     class="sm"
+     fill="#888780"
+     text-anchor="middle"
+     transform="rotate(-90 615 400)"
+     id="text29">validated answer returns to the user</text>
 </svg>

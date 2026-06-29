@@ -1,12 +1,60 @@
-<svg width="100%" viewBox="0 0 700 660" role="img" xmlns="http://www.w3.org/2000/svg">
-<title>AV|VA — validation and verification, with risk-proportional routing</title>
-<desc>Validation happens before the answer: a gate checks whether the task is well-formed and the construct sound, with an off-ramp to reframe or refuse. Four scoping questions — task type, intended use, cost if wrong, and whether it can be checked against a source — produce a risk level of low, medium, or high. Verification happens after the answer: each risk tier routes to a proportional set of checks, from self-critique at low risk up to an independent second model, external source and legal precision, and human review at high risk. All routes converge on a checked output.</desc>
-<defs>
-<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</marker>
-<style>
-text{font-family:"Anthropic Sans",-apple-system,system-ui,"Segoe UI",sans-serif;}
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="100%"
+   viewBox="0 0 700 660"
+   role="img"
+   version="1.1"
+   id="svg31"
+   sodipodi:docname="av_va_risk_routing_dark.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview31"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.97819291"
+     inkscape:cx="326.62269"
+     inkscape:cy="348.09085"
+     inkscape:window-width="1512"
+     inkscape:window-height="916"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg31" />
+  <title
+     id="title1">AV|VA — validation and verification, with risk-proportional routing</title>
+  <desc
+     id="desc1">Validation happens before the answer: a gate checks whether the task is well-formed and the construct sound, with an off-ramp to reframe or refuse. Four scoping questions — task type, intended use, cost if wrong, and whether it can be checked against a source — produce a risk level of low, medium, or high. Verification happens after the answer: each risk tier routes to a proportional set of checks, from self-critique at low risk up to an independent second model, external source and legal precision, and human review at high risk. All routes converge on a checked output.</desc>
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M2 1L8 5L2 9"
+         fill="none"
+         stroke="context-stroke"
+         stroke-width="1.5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path1" />
+    </marker>
+    <style
+       id="style1">
+text{font-family:&quot;Anthropic Sans&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,sans-serif;}
 .ttl{font-size:14px;font-weight:500;}
 .sub{font-size:12px;font-weight:400;}
 .sm{font-size:11px;font-weight:400;}
@@ -14,89 +62,492 @@ text{font-family:"Anthropic Sans",-apple-system,system-ui,"Segoe UI",sans-serif;
 .cap{font-size:11px;font-weight:500;letter-spacing:0.06em;}
 .ln{fill:none;stroke:#888780;stroke-width:1.5px;}
 </style>
-</defs>
-
-<!-- header -->
-<text x="350" y="28" class="ttl" fill="#E8E6DC" text-anchor="middle">AV|VA — validation and verification</text>
-<text x="350" y="46" class="sub" fill="#B4B2A9" text-anchor="middle">scrutiny scales with what happens if the answer is wrong</text>
-
-<!-- VALIDATION region -->
-<rect x="30" y="66" width="640" height="290" rx="10" fill="#2C2C2A" stroke="#444441" stroke-width="1"/>
-<text x="46" y="84" class="cap" fill="#888780">VALIDATION · BEFORE THE ANSWER · IS THIS THE RIGHT QUESTION?</text>
-
-<!-- AI output -->
-<rect x="250" y="96" width="200" height="40" rx="6" fill="#CECBF6" stroke="#AFA9EC" stroke-width="0.5"/>
-<text x="350" y="112" class="ttl" fill="#CECBF6" text-anchor="middle" dominant-baseline="central">AI output</text>
-<text x="350" y="127" class="sub" fill="#AFA9EC" text-anchor="middle" dominant-baseline="central">what the model produced</text>
-<line x1="350" y1="136" x2="350" y2="150" class="ln" marker-end="url(#arrow)"/>
-
-<!-- validation gate -->
-<rect x="185" y="150" width="330" height="44" rx="6" fill="#412402" stroke="#FAC775" stroke-width="0.5"/>
-<text x="350" y="168" class="ttl" fill="#FAC775" text-anchor="middle" dominant-baseline="central">Validate the question</text>
-<text x="350" y="184" class="sub" fill="#FAC775" text-anchor="middle" dominant-baseline="central">well-formed? construct sound? right form to answer?</text>
-<!-- off-ramp -->
-<line x1="515" y1="172" x2="532" y2="172" class="ln" marker-end="url(#arrow)"/>
-<rect x="532" y="156" width="136" height="32" rx="6" fill="#3D3D3A" stroke="#FAC775" stroke-width="0.5" stroke-dasharray="4 3"/>
-<text x="600" y="172" class="sm" fill="#FAC775" text-anchor="middle" dominant-baseline="central">no → reframe / refuse</text>
-<line x1="350" y1="194" x2="350" y2="208" class="ln" marker-end="url(#arrow)"/>
-
-<!-- four questions -->
-<rect x="175" y="208" width="350" height="100" rx="6" fill="#2C2C2A" stroke="#888780" stroke-width="0.5"/>
-<text x="192" y="226" class="ttl" fill="#B4B2A9">Scope the task → risk level</text>
-<text x="192" y="248" class="sub" fill="#B4B2A9">1 · what kind of task did the AI do?</text>
-<text x="192" y="266" class="sub" fill="#B4B2A9">2 · what will the output be used for?</text>
-<text x="192" y="284" class="sub" fill="#B4B2A9">3 · what happens if it is wrong?</text>
-<text x="192" y="302" class="sub" fill="#B4B2A9">4 · can it be checked against a source?</text>
-<line x1="350" y1="308" x2="350" y2="320" class="ln" marker-end="url(#arrow)"/>
-
-<!-- risk bar -->
-<text x="165" y="339" class="sm" fill="#888780" text-anchor="end">Risk level</text>
-<rect x="170" y="324" width="120" height="30" rx="6" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
-<text x="230" y="339" class="sub" fill="#9FE1CB" text-anchor="middle" dominant-baseline="central">low</text>
-<rect x="290" y="324" width="120" height="30" fill="#412402" stroke="#FAC775" stroke-width="0.5"/>
-<text x="350" y="339" class="sub" fill="#FAC775" text-anchor="middle" dominant-baseline="central">medium</text>
-<rect x="410" y="324" width="120" height="30" rx="6" fill="#633806" stroke="#EF9F27" stroke-width="0.5"/>
-<text x="470" y="339" class="sub" fill="#FAC775" text-anchor="middle" dominant-baseline="central">high</text>
-
-<!-- VERIFICATION region -->
-<rect x="30" y="362" width="640" height="256" rx="10" fill="#04342C" stroke="#444441" stroke-width="1"/>
-<text x="46" y="380" class="cap" fill="#888780">VERIFICATION · AFTER THE ANSWER · DOES IT HOLD UP?</text>
-
-<!-- routing arrows: risk tier -> its column -->
-<path d="M230 356 L130 394" class="ln" marker-end="url(#arrow)"/>
-<line x1="350" y1="356" x2="350" y2="394" class="ln" marker-end="url(#arrow)"/>
-<path d="M470 356 L560 394" class="ln" marker-end="url(#arrow)"/>
-
-<!-- LOW route -->
-<rect x="55" y="398" width="150" height="44" rx="6" fill="#CECBF6" stroke="#AFA9EC" stroke-width="0.5"/>
-<text x="130" y="416" class="ttl" fill="#CECBF6" text-anchor="middle" dominant-baseline="central">Self-critique</text>
-<text x="130" y="432" class="sub" fill="#AFA9EC" text-anchor="middle" dominant-baseline="central">+ assumption audit</text>
-
-<!-- MEDIUM route -->
-<rect x="265" y="398" width="170" height="44" rx="6" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
-<text x="350" y="416" class="ttl" fill="#9FE1CB" text-anchor="middle" dominant-baseline="central">Source &amp; rule checks</text>
-<text x="350" y="432" class="sub" fill="#5DCAA5" text-anchor="middle" dominant-baseline="central">source · rule · computation</text>
-
-<!-- HIGH route (stacked) -->
-<rect x="460" y="398" width="200" height="40" rx="6" fill="#CECBF6" stroke="#AFA9EC" stroke-width="0.5"/>
-<text x="560" y="414" class="ttl" fill="#CECBF6" text-anchor="middle" dominant-baseline="central">Independent second model</text>
-<text x="560" y="429" class="sub" fill="#AFA9EC" text-anchor="middle" dominant-baseline="central">no part in producing the output</text>
-<line x1="560" y1="438" x2="560" y2="448" class="ln" marker-end="url(#arrow)"/>
-<rect x="460" y="448" width="200" height="40" rx="6" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
-<text x="560" y="464" class="ttl" fill="#9FE1CB" text-anchor="middle" dominant-baseline="central">External source + legal precision</text>
-<text x="560" y="479" class="sub" fill="#5DCAA5" text-anchor="middle" dominant-baseline="central">status · sanctions vs export lists</text>
-<line x1="560" y1="488" x2="560" y2="498" class="ln" marker-end="url(#arrow)"/>
-<rect x="460" y="498" width="200" height="36" rx="6" fill="#412402" stroke="#FAC775" stroke-width="0.5"/>
-<text x="560" y="516" class="sub" fill="#FAC775" text-anchor="middle" dominant-baseline="central">Human review — at the ceiling</text>
-<text x="560" y="552" class="nt" fill="#888780" text-anchor="middle">in testing, this caught a fictitious</text>
-<text x="560" y="564" class="nt" fill="#888780" text-anchor="middle">regulatory category shown as official</text>
-
-<!-- converge to checked output -->
-<path d="M130 442 C 130 524 250 550 332 575" class="ln" marker-end="url(#arrow)"/>
-<line x1="350" y1="442" x2="350" y2="575" class="ln" marker-end="url(#arrow)"/>
-<path d="M560 534 C 470 560 420 560 368 575" class="ln" marker-end="url(#arrow)"/>
-<rect x="240" y="578" width="220" height="34" rx="6" fill="#2C2C2A" stroke="#888780" stroke-width="0.5"/>
-<text x="350" y="589" class="ttl" fill="#B4B2A9" text-anchor="middle" dominant-baseline="central">Checked output</text>
-<text x="350" y="603" class="sub" fill="#888780" text-anchor="middle" dominant-baseline="central">verification proportional to risk</text>
-
+  </defs>
+  <!-- header -->
+  <text
+     x="350"
+     y="28"
+     class="ttl"
+     fill="#E8E6DC"
+     text-anchor="middle"
+     id="text1">AV|VA — validation and verification</text>
+  <text
+     x="350"
+     y="46"
+     class="sub"
+     fill="#B4B2A9"
+     text-anchor="middle"
+     id="text2">scrutiny scales with what happens if the answer is wrong</text>
+  <!-- VALIDATION region -->
+  <rect
+     x="30"
+     y="66"
+     width="640"
+     height="290"
+     rx="10"
+     fill="#2C2C2A"
+     stroke="#444441"
+     stroke-width="1"
+     id="rect2" />
+  <text
+     x="46"
+     y="84"
+     class="cap"
+     fill="#888780"
+     id="text3">VALIDATION · BEFORE THE ANSWER · IS THIS THE RIGHT QUESTION?</text>
+  <!-- AI output -->
+  <rect
+     x="250"
+     y="96"
+     width="200"
+     height="40"
+     rx="6"
+     fill="#CECBF6"
+     stroke="#AFA9EC"
+     stroke-width="0.5"
+     id="rect3" />
+  <text
+     x="350"
+     y="112"
+     class="ttl"
+     fill="#CECBF6"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text4"
+     style="fill:#8075e3;fill-opacity:1">AI output</text>
+  <text
+     x="350"
+     y="127"
+     class="sub"
+     fill="#AFA9EC"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text5"
+     style="fill:#8075e3;fill-opacity:1">what the model produced</text>
+  <line
+     x1="350"
+     y1="136"
+     x2="350"
+     y2="150"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line5" />
+  <!-- validation gate -->
+  <rect
+     x="185"
+     y="150"
+     width="330"
+     height="44"
+     rx="6"
+     fill="#412402"
+     stroke="#FAC775"
+     stroke-width="0.5"
+     id="rect5" />
+  <text
+     x="350"
+     y="168"
+     class="ttl"
+     fill="#FAC775"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text6">Validate the question</text>
+  <text
+     x="350"
+     y="184"
+     class="sub"
+     fill="#FAC775"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text7">well-formed? construct sound? right form to answer?</text>
+  <!-- off-ramp -->
+  <line
+     x1="515"
+     y1="172"
+     x2="532"
+     y2="172"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line7" />
+  <rect
+     x="532"
+     y="156"
+     width="136"
+     height="32"
+     rx="6"
+     fill="#3D3D3A"
+     stroke="#FAC775"
+     stroke-width="0.5"
+     stroke-dasharray="4 3"
+     id="rect7" />
+  <text
+     x="600"
+     y="172"
+     class="sm"
+     fill="#FAC775"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text8">no → reframe / refuse</text>
+  <line
+     x1="350"
+     y1="194"
+     x2="350"
+     y2="208"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line8" />
+  <!-- four questions -->
+  <rect
+     x="175"
+     y="208"
+     width="350"
+     height="100"
+     rx="6"
+     fill="#2C2C2A"
+     stroke="#888780"
+     stroke-width="0.5"
+     id="rect8" />
+  <text
+     x="192"
+     y="226"
+     class="ttl"
+     fill="#B4B2A9"
+     id="text9">Scope the task → risk level</text>
+  <text
+     x="192"
+     y="248"
+     class="sub"
+     fill="#B4B2A9"
+     id="text10">1 · what kind of task did the AI do?</text>
+  <text
+     x="192"
+     y="266"
+     class="sub"
+     fill="#B4B2A9"
+     id="text11">2 · what will the output be used for?</text>
+  <text
+     x="192"
+     y="284"
+     class="sub"
+     fill="#B4B2A9"
+     id="text12">3 · what happens if it is wrong?</text>
+  <text
+     x="192"
+     y="302"
+     class="sub"
+     fill="#B4B2A9"
+     id="text13">4 · can it be checked against a source?</text>
+  <line
+     x1="350"
+     y1="308"
+     x2="350"
+     y2="320"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line13" />
+  <!-- risk bar -->
+  <text
+     x="165"
+     y="339"
+     class="sm"
+     fill="#888780"
+     text-anchor="end"
+     id="text14">Risk level</text>
+  <rect
+     x="170"
+     y="324"
+     width="120"
+     height="30"
+     rx="6"
+     fill="#9FE1CB"
+     stroke="#5DCAA5"
+     stroke-width="0.5"
+     id="rect14" />
+  <text
+     x="230"
+     y="339"
+     class="sub"
+     fill="#9FE1CB"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text15"
+     style="fill:#35a47f;fill-opacity:1">low</text>
+  <rect
+     x="290"
+     y="324"
+     width="120"
+     height="30"
+     fill="#412402"
+     stroke="#FAC775"
+     stroke-width="0.5"
+     id="rect15" />
+  <text
+     x="350"
+     y="339"
+     class="sub"
+     fill="#FAC775"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text16">medium</text>
+  <rect
+     x="410"
+     y="324"
+     width="120"
+     height="30"
+     rx="6"
+     fill="#633806"
+     stroke="#EF9F27"
+     stroke-width="0.5"
+     id="rect16" />
+  <text
+     x="470"
+     y="339"
+     class="sub"
+     fill="#FAC775"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text17">high</text>
+  <!-- VERIFICATION region -->
+  <rect
+     x="30"
+     y="362"
+     width="640"
+     height="256"
+     rx="10"
+     fill="#04342C"
+     stroke="#444441"
+     stroke-width="1"
+     id="rect17" />
+  <text
+     x="46"
+     y="380"
+     class="cap"
+     fill="#888780"
+     id="text18">VERIFICATION · AFTER THE ANSWER · DOES IT HOLD UP?</text>
+  <!-- routing arrows: risk tier -> its column -->
+  <path
+     d="M230 356 L130 394"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="path18" />
+  <line
+     x1="350"
+     y1="356"
+     x2="350"
+     y2="394"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line18" />
+  <path
+     d="M470 356 L560 394"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="path19" />
+  <!-- LOW route -->
+  <rect
+     x="55"
+     y="398"
+     width="150"
+     height="44"
+     rx="6"
+     fill="#CECBF6"
+     stroke="#AFA9EC"
+     stroke-width="0.5"
+     id="rect19" />
+  <text
+     x="130"
+     y="416"
+     class="ttl"
+     fill="#CECBF6"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text19"
+     style="fill:#8075e3;fill-opacity:1">Self-critique</text>
+  <text
+     x="130"
+     y="432"
+     class="sub"
+     fill="#AFA9EC"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text20"
+     style="fill:#8075e3;fill-opacity:1">+ assumption audit</text>
+  <!-- MEDIUM route -->
+  <rect
+     x="265"
+     y="398"
+     width="170"
+     height="44"
+     rx="6"
+     fill="#9FE1CB"
+     stroke="#5DCAA5"
+     stroke-width="0.5"
+     id="rect20" />
+  <text
+     x="350"
+     y="416"
+     class="ttl"
+     fill="#9FE1CB"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text21"
+     style="fill:#35a47f;fill-opacity:1">Source &amp; rule checks</text>
+  <text
+     x="350"
+     y="432"
+     class="sub"
+     fill="#5DCAA5"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text22"
+     style="fill:#35a47f;fill-opacity:1">source · rule · computation</text>
+  <!-- HIGH route (stacked) -->
+  <rect
+     x="460"
+     y="398"
+     width="200"
+     height="40"
+     rx="6"
+     fill="#CECBF6"
+     stroke="#AFA9EC"
+     stroke-width="0.5"
+     id="rect22" />
+  <text
+     x="560"
+     y="414"
+     class="ttl"
+     fill="#CECBF6"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text23"
+     style="fill:#8075e3;fill-opacity:1">Independent second model</text>
+  <text
+     x="560"
+     y="429"
+     class="sub"
+     fill="#AFA9EC"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text24"
+     style="fill:#8075e3;fill-opacity:1">no part in producing the output</text>
+  <line
+     x1="560"
+     y1="438"
+     x2="560"
+     y2="448"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line24" />
+  <rect
+     x="460"
+     y="448"
+     width="200"
+     height="40"
+     rx="6"
+     fill="#9FE1CB"
+     stroke="#5DCAA5"
+     stroke-width="0.5"
+     id="rect24" />
+  <text
+     x="560"
+     y="464"
+     class="ttl"
+     fill="#9FE1CB"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text25"
+     style="fill:#35a47f;fill-opacity:1">External source + legal precision</text>
+  <text
+     x="560"
+     y="479"
+     class="sub"
+     fill="#5DCAA5"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text26"
+     style="fill:#35a47f;fill-opacity:1">status · sanctions vs export lists</text>
+  <line
+     x1="560"
+     y1="488"
+     x2="560"
+     y2="498"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line26" />
+  <rect
+     x="460"
+     y="498"
+     width="200"
+     height="36"
+     rx="6"
+     fill="#412402"
+     stroke="#FAC775"
+     stroke-width="0.5"
+     id="rect26" />
+  <text
+     x="560"
+     y="516"
+     class="sub"
+     fill="#FAC775"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text27">Human review — at the ceiling</text>
+  <text
+     x="560"
+     y="552"
+     class="nt"
+     fill="#888780"
+     text-anchor="middle"
+     id="text28">in testing, this caught a fictitious</text>
+  <text
+     x="560"
+     y="564"
+     class="nt"
+     fill="#888780"
+     text-anchor="middle"
+     id="text29">regulatory category shown as official</text>
+  <!-- converge to checked output -->
+  <path
+     d="M130 442 C 130 524 250 550 332 575"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="path29" />
+  <line
+     x1="350"
+     y1="442"
+     x2="350"
+     y2="575"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="line29" />
+  <path
+     d="M560 534 C 470 560 420 560 368 575"
+     class="ln"
+     marker-end="url(#arrow)"
+     id="path30" />
+  <rect
+     x="240"
+     y="578"
+     width="220"
+     height="34"
+     rx="6"
+     fill="#2C2C2A"
+     stroke="#888780"
+     stroke-width="0.5"
+     id="rect30" />
+  <text
+     x="350"
+     y="589"
+     class="ttl"
+     fill="#B4B2A9"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text30">Checked output</text>
+  <text
+     x="350"
+     y="603"
+     class="sub"
+     fill="#888780"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text31">verification proportional to risk</text>
 </svg>

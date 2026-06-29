@@ -1,6 +1,6 @@
 ---
 layout: home
-title: research systems
+title: home
 ---
 
 <div class="rs-home-hero">

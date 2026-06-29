@@ -116,12 +116,12 @@ const output = `# research systems — site content
    - [Practice](#practice)
 3. [AI analytics](#ai-analytics)
    - [The AI metascientist](#the-ai-metascientist)
-   - [Corpus builder](#corpus-builder)
+   - [Claude Projects](#claude-projects)
    - [Biblioscope](#biblioscope)
    - [GRID+](#grid)
    - [Journalscape](#journalscape)
    - [DimQuery](#dimquery)
-   - [BiblioFlow](#biblioflow)
+   - [Biblioflow](#biblioflow)
 4. [Evaluation](#evaluation)
    - [AV|VA](#avva)
 5. [Writing](#writing)
@@ -163,7 +163,7 @@ ${pages.background}
 
 ## AI analytics
 
-*The centre of what I work on now: governed, conversational analytics over structured research data. These pages are meant to be read as an arc, not a catalogue. The AI metascientist is the organising idea: AI at the border of an analysis, the analytical core kept explicit enough to inspect. The corpus builder is the entry and arguably one of the most important parts of bibliometrics; Biblioscope is a working system that puts the approach to use; DimQuery is the earlier attempt whose limits pointed the way; and BiblioFlow is where the work goes next. GRID+ and Journalscape are multi-step, deterministic, local-first pipelines for metadata enhancement.*
+*The centre of what I work on now: governed, conversational analytics over structured research data. These pages are meant to be read as an arc, not a catalogue. The AI metascientist is the organising idea: AI at the border of an analysis, the analytical core kept explicit enough to inspect. The corpus builder is the entry and arguably one of the most important parts of bibliometrics; Biblioscope is a working system that puts the approach to use; DimQuery is the earlier attempt whose limits pointed the way; and Biblioflow is where the work goes next. GRID+ and Journalscape are multi-step, deterministic, local-first pipelines for metadata enhancement.*
 
 ### The AI metascientist
 
@@ -171,7 +171,7 @@ ${pages.background}
 
 ${pages.aiMetascientist}
 
-### Corpus builder
+### Claude Projects
 
 *Status: implemented · Tags: Claude Projects, workflow design, conversational analytics, bibliometrics*
 
@@ -201,7 +201,7 @@ ${pages.journalscape}
 
 ${pages.dimquery}
 
-### BiblioFlow
+### Biblioflow
 
 *Status: concept · Tags: local AI, semantic layer, BigQuery MCP, bibliometrics*
 
