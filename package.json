@@ -1,7 +1,7 @@
 {
   "name": "research-systems-site",
   "version": "1.0.0",
-  "description": "Scaffold for a website organised around methods, frameworks, tools, notes, and about pages.",
+  "description": "Personal website for Hélène Draux (helenedraux.com), built with VitePress.",
   "main": "index.js",
   "scripts": {
     "docs:dev": "vitepress dev",

@@ -63,7 +63,7 @@ export default defineConfig({
           text: 'Builds',
           items: [
             { text: 'Loom', link: '/builds/loom/' },
-            { text: 'Kids voice assistant', link: '/builds/kids-voice-assistant/' },
+            { text: 'Children voice assistant', link: '/builds/children-voice-assistant/' },
           ],
         },
       ],

@@ -4,15 +4,13 @@ title: Research Musings
 
 # Research Musings
 
-Research Musings is a newsletter I write on the mechanics of research — how knowledge is made, measured, and mediated. It started as an informal but analytical space to work through the questions that don't fit a formal paper: a dataset that surprised me, a metric that doesn't mean what people think it means, an AI tool that fails in an instructive way.
+Research Musings is a newsletter I write on the mechanics of research: how knowledge is made, measured, and mediated. It started as an informal but analytical space to work through the questions that don't fit a formal paper: a data slice that surprised me, a metric that doesn't mean what people think it means, an AI tool that fails in an instructive way.
 
-The writing is organised into five recurring series — data (built around a dataset, a chart, or a pattern), metrics (introducing a method or interrogating how an indicator is made and used), AI (the role of AI in research: tools, risks, and limits), policy (funding structures, research systems, and strategic shifts), and thought (stepping back — on institutions, incentives, and culture). Some inquiries run across several pieces; I think of those as threads, returning to a theme from different angles — the geography of research, the visibility of overlooked fields, and the ways political pressure reshapes what science gets done.
+Several pieces here began as Research Musings posts, and some are written with colleagues at Digital Science. 
 
-Several pieces here began as Research Musings posts, and some are written with colleagues at Digital Science. It's where ideas get tested before they harden into anything more formal.
+## Series
 
-## Threads
-
-The newsletter runs as a few recurring threads. **Data** is built around a dataset, a chart, or a pattern. **Metrics** introduces a method or interrogates how an indicator is made and used. **AI** looks at the role of AI in research — tools, risks, and limits. **Policy** covers funding structures, research systems, and strategic shifts. **Thought** steps back, to institutions, incentives, and culture. Some inquiries run across several pieces. Conversational bibliometrics is one such thread — [its own page is here](/writing/conversational-bibliometrics/).
+The newsletter runs as a few recurring series. **Data** is built around a dataset, a chart, or a pattern. **Metrics** introduces a method or interrogates how an indicator is made and used. **AI** looks at the role of AI in research — tools, risks, and limits. **Policy** covers funding structures, research systems, and strategic shifts. **Thought** steps back, to institutions, incentives, and culture. Some inquiries run across several pieces; conversational bibliometrics is one such thread with [its own page is here](/writing/conversational-bibliometrics/).
 
 ## Selected pieces
 

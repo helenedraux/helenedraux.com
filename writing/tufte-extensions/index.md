@@ -4,21 +4,17 @@ title: Tufte’s extensions
 
 # Tufte’s extensions
 
+I discovered Tufte's principles during my PhD, and it has shaped how I build my charts: every encoding should do analytical work, axes should not be cut to manufacture drama, double axes should be avoided, and decoration should not pretend to be information. The chart itself should tell the story, rather than the reader guessing it. Cartography had taught me the same lesson in a different form: label placement, colour, classification, and scale all change what the reader thinks they have seen. Maps and charts can lie, and I'm here to make sure the data is represented fairly and clearly.
 
-Tufte’s principles shaped how I learned to look at charts: every encoding should do analytical work, axes should not be cut to manufacture drama, double axes should be treated with suspicion, and decoration should not pretend to be information. I do not apply those rules because they are elegant, although they are; I apply them because once a chart becomes the thing someone reads instead of the data, the chart has started making analytical decisions on the reader’s behalf.
+## Small multiples
 
-That training has stayed with me from geomatics into research analytics. Cartography teaches the same lesson in a different form: label placement, colour, classification, and scale all change what the reader thinks they have seen. A bad map can lie very politely. So can a chart.
+One of my favourite tool from the Tufte's toolbox is the small multiples: instead of a spaghetti graph with multiple lines that overlap so much that it is impossible to easily read who is who, I use one chart per variable, organised on a grid. Because I prefer keeping the same values for the y axes and that it is hard to compare two charts next to each other, my personal extension is to add context. Either by using the other values greyed out (like in datawrapper.de), or when using the plotly library, add an average for instance.
 
-The small multiples extension came from a fairly simple reading problem. Tufte’s small multiples give each series its own panel, which makes comparison easier because the structure stays constant and only the data changes. I usually want one more thing: context inside each panel. If I show one institution, country, field, or funder at a time, I also want the reader to see whether its trajectory is typical or unusual. That can mean showing the average, or showing all other values in the background, so the highlighted series remains readable without being cut loose from the distribution it belongs to.
+## Bumped stack bar
 
-The bumped stacked bar came from a different problem: composition over time when both part-to-whole structure and rank movement matter. A stacked bar chart shows absolute totals and composition, but it hides the trajectory of every series except the one on the baseline. The other segments float, so their movement is difficult to read. A bump chart shows rank movement clearly, but it discards absolute values. I wanted both: how much there was, how the parts composed the total, and which series were moving up or down relative to the others.
-
-The bumped stacked bar keeps the stacked bar structure but changes the order of the segments at each time point. Instead of fixing the stack order across the full series, it ranks the segments by value within each period and stacks them accordingly. A category rising through the stack is therefore visibly rising in rank, while the bar still preserves the total and the part-to-whole relationship. The stacking order carries meaning rather than acting as a fixed layout convention.
+The bumped / ranked stacked bar came from a different problem: I liked a lot the bumped chart that can be created in rawgraphs.io, but it was not easy to read. Therefore I took the concept: ranking the values each year, and ordering by largest to smallest, from top to bottom. I don't think they existe out of the box in any visualisation library or tool that I've used, but here is an illustration of charts I used to produce: the top value for Open Access in 2021 would be hard to read in the chart below if it weren't for the ordering change. I could have used a line chart, but there is always the risk of writing a spaghetti chart and this tells the story much faster.
 
 <ClientOnly>
   <BumpedStackedBar />
 </ClientOnly>
 
-This is not a general replacement for stacked bars. If the question is mainly composition, a standard stacked bar may be enough. If the question is mainly rank, a bump chart may be cleaner. I use the bumped version when the analytical problem sits between the two, and when separating the views would make the reader do the integration manually.
-
-The bumped stacked bar appeared in public reports, but I have not seen it implemented in Datawrapper or other common chart tools. This page is its first standalone documentation.

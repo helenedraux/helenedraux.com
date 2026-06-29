@@ -52,10 +52,10 @@ export const redirects: Record<string, string> = {
   '/projects/loom/': '/builds/loom/',
   '/tools/loom': '/builds/loom',
   '/tools/loom/': '/builds/loom/',
-  '/projects/kids-voice-assistant': '/builds/kids-voice-assistant',
-  '/projects/kids-voice-assistant/': '/builds/kids-voice-assistant/',
-  '/tools/kids-voice-assistant': '/builds/kids-voice-assistant',
-  '/tools/kids-voice-assistant/': '/builds/kids-voice-assistant/',
+  '/projects/children-voice-assistant': '/builds/children-voice-assistant',
+  '/projects/children-voice-assistant/': '/builds/children-voice-assistant/',
+  '/tools/children-voice-assistant': '/builds/children-voice-assistant',
+  '/tools/children-voice-assistant/': '/builds/children-voice-assistant/',
 
   // Writing
   '/projects/bumped-stacked-bar': '/writing/tufte-extensions',

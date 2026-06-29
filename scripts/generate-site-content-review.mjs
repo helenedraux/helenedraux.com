@@ -83,7 +83,7 @@ const pages = {
   tufte: readPage('writing/tufte-extensions/index.md'),
   interviewing: readPage('writing/interviewing-yourself/index.md'),
   loom: readPage('builds/loom/index.md'),
-  kidsVa: readPage('builds/kids-voice-assistant/index.md'),
+  childrenVa: readPage('builds/children-voice-assistant/index.md'),
   cv: readPage('cv/index.md', { keepTitle: true }),
   contact: readPage('about/contact/index.md'),
   references: readPage('about/references/index.md'),
@@ -131,7 +131,7 @@ const output = `# research systems — site content
    - [Interviewing yourself](#interviewing-yourself)
 6. [Builds](#builds)
    - [Loom](#loom)
-   - [Kids voice assistant](#kids-voice-assistant)
+   - [Children voice assistant](#children-voice-assistant)
 7. [CV](#cv)
 8. [Appendix: stubs and work in progress](#appendix-stubs-and-work-in-progress)
 
@@ -259,11 +259,11 @@ ${buildsIntro}
 
 ${pages.loom}
 
-### Kids voice assistant
+### Children voice assistant
 
 *Tags: local AI, Raspberry Pi, voice assistant, privacy*
 
-${pages.kidsVa}
+${pages.childrenVa}
 
 ---
 

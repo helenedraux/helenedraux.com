@@ -16,7 +16,7 @@ export const sections: Record<string, Section> = {
   'ai-analytics': {
     title: 'AI analytics',
     intro:
-      '<p>Below are a few recent AI projects and concepts: conversational bibliometrics and AI workflows for data enhancement and discovery.</p><p>The conversational bibliometrics work covers a prototype web app; a custom GPT that writes domain-specific Google BigQuery queries; a set of Claude Projects that build research corpora, run bibliometric analyses, and review the resulting reports; and the concept for a multi-step, local-model workflow for AI-assisted analytics.</p><p>The AI workflows cover metadata enhancement for a research-organisation database: Wikipedia retrieval, then deterministic, local-model, and frontier-model steps; geographic enrichment of research journal titles (for example, American Journal of Chinese Medicine), and a smart newsletter that explains where a field is heading.</p>',
+      '<p>I use AI on research data in two contexts: conversational bibliometrics is about natural-language access to bibliometric analysis: prototypes that let a user steer an analytical workflow in plain language, across a few different architectures. The AI workflows spanned: targeted enhancement and enrichment tasks: metadata, geography, field monitoring; where AI handles a specific step in an otherwise structured pipeline.</p>',
     cards: [
       {
         group: 'Conversational bibliometrics',
@@ -78,7 +78,7 @@ export const sections: Record<string, Section> = {
   evaluation: {
     title: 'Evaluation',
     intro:
-      '<p>Working with AI for analytics, I can\'t assume an output will be reliable on the first turn. Part of my answer is to <a href="/ai-analytics/corpus-builder/">work slowly</a>; the other part is to build in systematic validation of the input and verification of the output, rather than trusting either by default.</p><p>This section collects that thinking, in four pieces:</p><ul><li>The <strong>vacuity index</strong> is an experiment I wrote for <em>Research Musings</em>, and the inspiration behind validating the input in AV|VA.</li><li><strong>AV|VA</strong> is the framework the rest grew around: a proposition for proportionate validation and verification, scaled to what the LLM is being used for and what the task actually requires.</li><li>The <strong>verification comparison</strong> is a simplified methodology I built at work to decide which LLM we should keep internally, and to show that an AI output isn\'t to be trusted on the first turn, however fluent it reads.</li><li><strong>Red-teaming an analytical agent</strong> is what I check when the user is adversarial rather than honest: whether a system holds its methodological and commercial integrity under pressure, not just its credentials.</li></ul>',
+      '<p>In AI analytics, I never assume an output will be reliable on the first turn, which is why I say I <a href="/ai-analytics/corpus-builder/">work slowly</a>; I also build in relevant validation of the input and verification of the output, rather than trusting either by default.</p><p>Below are four examples:</p><ul><li>The <strong>vacuity index</strong> is an experiment I wrote for <em>Research Musings</em>, and the inspiration behind validating the input in AV|VA.</li><li><strong>AV|VA</strong> is the framework the rest grew around: a proposition for proportionate validation and verification, scaled to what the LLM is being used for and what the task actually requires.</li><li>The <strong>verification comparison</strong> is a simplified methodology I built at work to decide which LLM we should keep internally, and to show that an AI output isn\'t to be trusted on the first turn, however fluent it reads.</li><li><strong>Red-teaming an analytical agent</strong> is what I check when the user is adversarial rather than honest: whether a system holds its methodological and commercial integrity under pressure, not just its credentials.</li></ul>',
     cards: [
       {
         title: 'Vacuity index',
@@ -109,7 +109,7 @@ export const sections: Record<string, Section> = {
   writing: {
     title: 'Writing',
     intro:
-      'A couple of years ago I started <i>Research Musings</i>, a Substack to share analytics built on Dimensions.ai, my employer\u2019s bibliometric database, alongside reflections on the research community and, increasingly, on using AI in research and analytics. Most of that writing is <em>Research Musings</em>; its recurring threads, like conversational bibliometrics, are collected there rather than listed separately here. Two things grew out of the habit and stand on their own. <br/>To write the newsletter I built a method for getting Claude to draft in my voice: not perfectly, but reliably faster; that is <em>Interviewing yourself</em>. <br/>And because visualisation has always been part of the work, I wrote up the bumped stacked bar, an extension to Tufte\u2019s visual grammar that I kept reaching for; that is <em>Tufte\u2019s extensions</em>.',
+      'A couple of years ago I started <a href="https://researchmusings.substack.com"><i>Research Musings</i></a>: a Substack to share analytics built on Dimensions.ai (my employer\u2019s bibliometric database), alongside reflections on the research community and, increasingly, on using AI in research and analytics.<br/>Check the <em>Research Musings</em> page for more details on recurring threads, like conversational bibliometrics.<br/>To write the newsletter I built a method for getting Claude to draft in my voice: not perfectly, but reliably faster; <em>Interviewing yourself</em> gives some details. And because visualisation has always been part of my work, I have extended Tufte\u2019s visual grammar with two extensions: <em>Tufte\u2019s extensions</em>.',
     cards: [
       {
         title: 'Research Musings',
@@ -127,7 +127,7 @@ export const sections: Record<string, Section> = {
         title: 'Tufte\u2019s extensions',
         link: '/writing/tufte-extensions/',
         description:
-          'The bumped stacked bar, an extension to Tufte\u2019s chart grammar.',
+          'Extension to Tufte\u2019s chart grammar: small multiples and bumped stack bar.',
       },
     ],
   },
@@ -159,8 +159,8 @@ export const sections: Record<string, Section> = {
           'Local-first work tracker: one keystroke to capture what you are working on.',
       },
       {
-        title: 'Kids voice assistant',
-        link: '/builds/kids-voice-assistant/',
+        title: 'Children voice assistant',
+        link: '/builds/children-voice-assistant/',
         description:
           'Raspberry Pi voice assistant for songs and Simple Wikipedia facts, without the cloud.',
       },
