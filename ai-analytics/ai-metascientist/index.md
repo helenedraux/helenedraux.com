@@ -9,7 +9,11 @@ outline: false
 # The AI metascientist <StatusBadge status="proof of concept" />
 
 <p class="diagram diagram-aside-target">
-  <img src="/diagrams/ai_metascientist_architecture.svg" alt="AI metascientist architecture" />
+  <ColorModeImage
+    light="/diagrams/ai_metascientist_architecture_light.svg"
+    dark="/diagrams/ai_metascientist_architecture_dark.svg"
+    alt="AI metascientist architecture"
+  />
 </p>
 
 I use “AI metascientist” for a governed analytics framework for conversational bibliometrics. I do not mean that an AI system becomes a bibliometrician, which would be too grand and too fragile; I mean that conversational access to bibliometric data needs an architecture that separates the parts of the analytical process a single model tends to blur together.
@@ -23,10 +27,6 @@ The AI metascientist puts methodological authority somewhere more stable than th
 That separation matters because each layer has a different job. I am comfortable using AI to help with interpretation, because natural language is the right interface for a user who knows what they want to ask but not how to express it as a bibliometric workflow. I am much less comfortable letting the same model decide whether the metric is valid, whether the corpus is coherent, and whether the report should mention a limitation. Those decisions need to sit in rules, semantic constraints, and workflow infrastructure that can be inspected.
 
 The framework has moved through a proof-of-concept phase, including a [Claude Projects implementation](/ai-analytics/corpus-builder/) across three coordinated projects: a corpus builder, an analytical workflow layer, and a report checker. That version was not the final architecture, but it made the separation visible: each project had a narrow job, and the hand-offs between them forced the workflow to state what had been decided rather than letting context blur into analysis. [BiblioFlow](/ai-analytics/biblioflow/) is where I would take the work next: moving the same separation of concerns out of frontier-model project files and into a local system built around smaller model tasks, a bibliometric semantic layer, and governed BigQuery execution through MCP.
-
-<p class="diagram">
-  <img src="/diagrams/conversational_bibliometrics_positioning.svg" alt="Conversational bibliometrics positioning" />
-</p>
 
 I have written the longer version of this argument on Substack. [Conversational bibliometrics needs a recipe, not just ingredients](https://researchmusings.substack.com/p/conversational-bibliometrics-needs) sets up the problem: conversational access is not just a usability layer, because once analytical workflows are mediated by infrastructure, the infrastructure starts deciding which methods and questions are legitimate. [The AI metascientist: designing the kitchen](https://researchmusings.substack.com/p/the-ai-metascientist-designing-the) develops the architecture more directly, including the distinction between recipes, pantry, and kitchen: execution constraints, data representation, and system architecture.
 
