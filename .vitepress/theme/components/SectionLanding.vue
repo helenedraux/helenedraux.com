@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { sections } from '../data/sections'
+import SiteIllustration from './SiteIllustration.vue'
 
 const props = defineProps<{
   section: string
+  illustration?: string
+  illustrationAlt?: string
 }>()
 
 const data = sections[props.section]
@@ -10,7 +13,15 @@ const data = sections[props.section]
 
 <template>
   <div v-if="data" class="section-landing">
-    <div v-if="data.intro" class="section-intro" v-html="data.intro" />
+    <div v-if="illustration && illustrationAlt" class="rs-page-hero-layout">
+      <div class="rs-page-hero-text">
+        <div v-if="data.intro" class="section-intro" v-html="data.intro" />
+      </div>
+      <div class="rs-page-hero-illustration">
+        <SiteIllustration :name="illustration" :alt="illustrationAlt" size="section" />
+      </div>
+    </div>
+    <div v-else-if="data.intro" class="section-intro" v-html="data.intro" />
     <div class="card-grid" :class="`card-grid--${section}`">
       <a
         v-for="card in data.cards"

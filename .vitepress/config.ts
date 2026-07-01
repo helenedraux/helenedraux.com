@@ -8,6 +8,8 @@ export default defineConfig({
   srcExclude: ['**/_drafts/**', '**/_review/**'],
 
   themeConfig: {
+    aside: false,
+
     docFooter: {
       prev: false,
       next: false,
@@ -26,6 +28,7 @@ export default defineConfig({
       '/ai-analytics/': [
         {
           text: 'AI analytics',
+          link: '/ai-analytics/',
           items: [
             { text: 'The AI metascientist', link: '/ai-analytics/ai-metascientist/' },
             { text: 'Claude Projects', link: '/ai-analytics/corpus-builder/' },
@@ -40,6 +43,7 @@ export default defineConfig({
       '/evaluation/': [
         {
           text: 'Evaluation',
+          link: '/evaluation/',
           items: [
             { text: 'Vacuity index', link: '/evaluation/vacuity-index/' },
             { text: 'AV|VA', link: '/evaluation/av-va/' },
@@ -51,6 +55,7 @@ export default defineConfig({
       '/writing/': [
         {
           text: 'Writing',
+          link: '/writing/',
           items: [
             { text: 'Research Musings', link: '/writing/research-musings/' },
             { text: 'Tufte\'s extensions', link: '/writing/tufte-extensions/' },
@@ -61,6 +66,7 @@ export default defineConfig({
       '/builds/': [
         {
           text: 'Builds',
+          link: '/builds/',
           items: [
             { text: 'Loom', link: '/builds/loom/' },
             { text: 'Children voice assistant', link: '/builds/children-voice-assistant/' },

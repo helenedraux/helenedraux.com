@@ -1,5 +1,7 @@
 ---
 title: CV
+aside: true
+outline: deep
 ---
 
 <div class="cv-top-bar">

@@ -3,9 +3,14 @@ layout: home
 title: home
 ---
 
-<div class="rs-home-hero">
-  <p class="rs-home-eyebrow">data · AI-assisted analytics · governed AI</p>
-  <p class="rs-home-statement">I build <a href="/ai-analytics/">slow AI analytics</a>: the user steers, the AI stays at the border, and the analytical core stays <a href="/evaluation/">auditable</a>.</p>
+<div class="rs-home-hero-layout">
+  <div class="rs-home-hero">
+    <p class="rs-home-eyebrow">data · AI-assisted analytics · governed AI</p>
+    <p class="rs-home-statement">I build <a href="/ai-analytics/">slow AI analytics</a>: the user steers, the AI stays at the border, and the analytical core stays <a href="/evaluation/">auditable</a>.</p>
+  </div>
+  <div class="rs-home-hero-illustration">
+    <SiteIllustration name="laptop_robot" alt="Hélène at her laptop, with a small robot nearby" size="hero" />
+  </div>
 </div>
 
 Welcome! I'm Hélène. I care about analyses you can reproduce, defend, and audit, which means I take it slow. I won't give you an answer in two minutes: I'll confirm the premises, show partial results, and steer before the full analysis runs, then shape the writing-up. Every step where judgment matters is confirmed and logged.

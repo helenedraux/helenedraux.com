@@ -16,7 +16,7 @@ export const sections: Record<string, Section> = {
   'ai-analytics': {
     title: 'AI analytics',
     intro:
-      '<p>I use AI on research data in two contexts: conversational bibliometrics is about natural-language access to bibliometric analysis: prototypes that let a user steer an analytical workflow in plain language, across a few different architectures. The AI workflows spanned: targeted enhancement and enrichment tasks: metadata, geography, field monitoring; where AI handles a specific step in an otherwise structured pipeline.</p>',
+      '<p>I use AI on research data in two contexts: conversational bibliometrics and AI workflows. <br/>Conversational bibliometrics is about natural-language access to bibliometric analysis. I started with DimQuery, a schema-aware Custom GPT for writing Dimensions BigQuery queries, then built the AI metascientist, a webapp for domain experts (heads of research, funders) who know their field but not the bibliometric details. The Claude Projects implementation tested the same separation for expert users. Biblioflow brings these experiments together into a local-first architecture: most of the workflow runs on small models, with a frontier model as reviewer, and the full process remains auditable without requiring a human in every step.<br/>The AI workflows used AI more narrowly: enhancement and enrichment tasks (metadata and geography), and field monitoring through research summarisation.</p>',
     cards: [
       {
         group: 'Conversational bibliometrics',

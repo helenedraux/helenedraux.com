@@ -2,8 +2,6 @@
 title: The AI metascientist
 type: method
 diagramAside: true
-aside: false
-outline: false
 ---
 
 # The AI metascientist <StatusBadge status="proof of concept" />

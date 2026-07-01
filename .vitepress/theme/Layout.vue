@@ -4,6 +4,8 @@ import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import DiagramAside from './components/DiagramAside.vue'
 import DiagramLightbox from './components/DiagramLightbox.vue'
+import NavBrandIcons from './components/NavBrandIcons.vue'
+import SidebarFigure from './components/SidebarFigure.vue'
 import { sectionAccentForPath, sectionSlugFromPath } from './data/sectionAccents'
 
 const { Layout } = DefaultTheme
@@ -30,7 +32,14 @@ watchEffect(() => {
 </script>
 
 <template>
-  <Layout />
+  <Layout>
+    <template #nav-bar-title-before>
+      <NavBrandIcons />
+    </template>
+    <template #sidebar-nav-after>
+      <SidebarFigure />
+    </template>
+  </Layout>
   <DiagramAside />
   <DiagramLightbox />
 </template>

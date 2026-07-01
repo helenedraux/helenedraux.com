@@ -1,8 +1,6 @@
 ---
 title: Claude Projects
 diagramAside: true
-aside: false
-outline: false
 ---
 
 # Claude Projects <StatusBadge status="implemented" />

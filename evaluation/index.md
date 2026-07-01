@@ -1,11 +1,10 @@
 ---
 title: Evaluation
 sidebar: false
-aside: false
 prev: false
 next: false
 ---
 
 # Evaluation
 
-<SectionLanding section="evaluation" />
+<SectionLanding section="evaluation" illustration="evaluation" illustrationAlt="Hélène reading and evaluating a document" />

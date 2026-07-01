@@ -1,10 +1,18 @@
 ---
 title: Tufte’s extensions
+sidebarFigure: false
 ---
 
 # Tufte’s extensions
 
-I discovered Tufte's principles during my PhD, and it has shaped how I build my charts: every encoding should do analytical work, axes should not be cut to manufacture drama, double axes should be avoided, and decoration should not pretend to be information. The chart itself should tell the story, rather than the reader guessing it. Cartography had taught me the same lesson in a different form: label placement, colour, classification, and scale all change what the reader thinks they have seen. Maps and charts can lie, and I'm here to make sure the data is represented fairly and clearly.
+<div class="rs-page-hero-layout">
+  <div class="rs-page-hero-text">
+    <p>I discovered Tufte's principles during my PhD, and it has shaped how I build my charts: every encoding should do analytical work, axes should not be cut to manufacture drama, double axes should be avoided, and decoration should not pretend to be information. The chart itself should tell the story, rather than the reader guessing it. Cartography had taught me the same lesson in a different form: label placement, colour, classification, and scale all change what the reader thinks they have seen. Maps and charts can lie, and I'm here to make sure the data is represented fairly and clearly.</p>
+  </div>
+  <div class="rs-page-hero-illustration">
+    <SiteIllustration name="tufte" alt="Hélène sketching a small-multiples chart" size="section" />
+  </div>
+</div>
 
 ## Small multiples
 
