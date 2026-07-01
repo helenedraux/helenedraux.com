@@ -4,7 +4,7 @@ title: Biblioflow
 
 # Biblioflow <StatusBadge status="concept" />
 
-Biblioflow is concept-level work for turning the [AI metascientist](/ai-analytics/ai-metascientist/) and [Claude Projects](ai-analytics/corpus-builder/) experiments into a more local, inspectable bibliometric workflow system.
+Biblioflow is concept-level work for turning the [AI metascientist](/ai-analytics/ai-metascientist/) and [Claude Projects](/ai-analytics/corpus-builder/) experiments into a more local, inspectable bibliometric workflow system.
 
 The AI metascientist established the principle: AI should sit at the border of the analysis, helping users express intent, clarify scope, and understand outputs, while methodological authority stays in governed workflows rather than in the model’s judgement. The Claude Projects implementation tested the same separation in practice: project files carried stages, gates, constraints, and hand-offs, so corpus building, analysis, and report checking could move through structured steps instead of dissolving into one long conversation.
 
