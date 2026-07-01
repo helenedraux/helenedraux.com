@@ -2,7 +2,7 @@
 title: Children voice assistant
 ---
 
-# Chilren voice assistant
+# Children's voice assistant
 
 
 I was interested in building a voice assistant that I would be ok to adopt without the usual household trade-off: an always-on microphone, cloud speech processing, and a query history stored somewhere outside the home.

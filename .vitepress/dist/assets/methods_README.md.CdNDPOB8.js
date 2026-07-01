@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./chunks/framework.RRduUuAx.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"methods/README.md","filePath":"methods/README.md"}'),o={name:"methods/README.md"};function s(r,c,n,d,m,p){return t(),a("div")}const E=e(o,[["render",s]]);export{i as __pageData,E as default};

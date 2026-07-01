@@ -5,6 +5,7 @@ import DefaultTheme from 'vitepress/theme'
 import DiagramAside from './components/DiagramAside.vue'
 import DiagramLightbox from './components/DiagramLightbox.vue'
 import NavBrandIcons from './components/NavBrandIcons.vue'
+import NotFoundPage from './components/NotFoundPage.vue'
 import SidebarFigure from './components/SidebarFigure.vue'
 import { sectionAccentForPath, sectionSlugFromPath } from './data/sectionAccents'
 
@@ -33,6 +34,9 @@ watchEffect(() => {
 
 <template>
   <Layout>
+    <template #not-found>
+      <NotFoundPage />
+    </template>
     <template #nav-bar-title-before>
       <NavBrandIcons />
     </template>

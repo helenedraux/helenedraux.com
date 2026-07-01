@@ -1,5 +1,6 @@
 ---
 title: CV
+description: CV of Hélène Draux — senior data scientist and technical consultant with 9+ years in research intelligence, bibliometrics, and AI-enabled analytics. London, UK.
 aside: true
 outline: deep
 ---
@@ -15,7 +16,7 @@ outline: deep
 
 **Senior Data Scientist & Technical Data Consultant**
 
-Senior data scientist and technical consultant with 9+ years' experience delivering complex analytical projects across data infrastructure, AI-enabled analytics, and research intelligence. I work at the intersection of data modelling, customer-facing technical delivery, and trustworthy AI systems: helping organisations turn complex structured data into reliable, explainable, and usable analytical outputs.
+Senior data scientist and technical consultant with 9+ years' experience delivering complex analytical projects across data infrastructure, AI-enabled analytics, and research intelligence. I build governed analytical systems: the kind where the method can be reconstructed, the assumptions challenged, and the output defended. The domain is research intelligence and bibliometrics; the constraint is auditability.
 
 I have repeatedly moved into new technical domains quickly, from spatial data and research methods to large-scale research analytics, BigQuery-based consulting, and LLM-mediated analytical systems, building enough depth to deliver client-facing work, reusable frameworks, and senior stakeholder communication.
 
