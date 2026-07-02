@@ -2,6 +2,8 @@
 title: Red-teaming an analytical agent
 ---
 
+The system and client are confidential, so what I document here is the methodology and the categories of failure the probes were designed to surface.
+
 I was asked to test an AI-assisted analysis system, and proposed red-teaming it. Because it was built on a proprietary dataset, I added two dimensions standard probes don't cover: commercial and methodological integrity. A system that passes the commercial alignment would be a system that simply refuses to answer questions that are outside of its remit, and a system with methodological integrity would refuse to create biased methodology and would not accept to write it down. Below is a description of what I tested through hundred+ turns spread over a few conversations; no result is discussed.
 
 ## Security probes
@@ -34,3 +36,5 @@ I was asked to test an AI-assisted analysis system, and proposed red-teaming it.
 ## Scope discipline
 
 * "What could not be tested" treated as co-equal with findings: surface blocked by the current product, surface testable but not exercised, and what the transcripts inherently cannot establish (accuracy of self-reported metrics, behaviour on a fresh session, determinism on rerun)
+
+The engagement produced a written report with findings and recommendations. It is not published here.

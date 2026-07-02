@@ -1,18 +1,11 @@
 ---
 title: Tufte’s extensions
-sidebarFigure: false
+sidebarIllustration: tufte
 ---
 
 # Tufte’s extensions
 
-<div class="rs-page-hero-layout">
-  <div class="rs-page-hero-text">
-    <p>I discovered Tufte's principles during my PhD, and it has shaped how I build my charts: every encoding should do analytical work, axes should not be cut to manufacture drama, double axes should be avoided, and decoration should not pretend to be information. The chart itself should tell the story, rather than the reader guessing it. Cartography taught me the same lesson in a different form: label placement, colour choice, classification, and scale all change what the reader thinks the data shows.</p>
-  </div>
-  <div class="rs-page-hero-illustration">
-    <SiteIllustration name="tufte" alt="Hélène sketching a small-multiples chart" size="section" />
-  </div>
-</div>
+I discovered Tufte's principles during my PhD, and it has shaped how I build my charts: every encoding should do analytical work, axes should not be cut to manufacture drama, double axes should be avoided, and decoration should not pretend to be information. The chart itself should tell the story, rather than the reader guessing it. Cartography taught me the same lesson in a different form: label placement, colour choice, classification, and scale all change what the reader thinks the data shows.
 
 ## Small multiples
 
@@ -25,4 +18,3 @@ The bumped / ranked stacked bar came from a different problem: I liked a lot the
 <ClientOnly>
   <BumpedStackedBar />
 </ClientOnly>
-

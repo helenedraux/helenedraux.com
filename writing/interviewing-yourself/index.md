@@ -1,18 +1,11 @@
 ---
 title: Interviewing yourself
-sidebarFigure: false
+sidebarIllustration: interview
 ---
 
 # Interviewing yourself
 
-<div class="rs-page-hero-layout">
-  <div class="rs-page-hero-text">
-    <p>AI is relatively good at producing long documents, which is powerful; but left to itself it tends to write in a sloppy, generic way. The usual fix is a writing guideline: a document that describes how the writing should actually be done. I have two: one covers my _Research Musings_ substack, which, aside from tone, asks that the writing stays focused on the methodology rather than the results, and never overstate what those results show. The analyst version goes further: it also covers colours, charts (most of Tufte's visualisation rules, with my [extension: the bumped stacked bar](http://helenedraux.com/writing/tufte-extensions/)), and tone. Rather than write either from scratch, I asked a model to interview me.</p>
-  </div>
-  <div class="rs-page-hero-illustration">
-    <SiteIllustration name="interview" alt="Hélène being interviewed at her desk" size="section" />
-  </div>
-</div>
+AI is relatively good at producing long documents, which is powerful; but left to itself it tends to write in a sloppy, generic way. The usual fix is a writing guideline: a document that describes how the writing should actually be done. I have two: one covers my _Research Musings_ substack, which, aside from tone, asks that the writing stays focused on the methodology rather than the results, and never overstate what those results show. The analyst version goes further: it also covers colours, charts (most of Tufte's visualisation rules, with my [extension: the bumped stacked bar](https://helenedraux.com/writing/tufte-extensions/)), and tone. Rather than write either from scratch, I asked a model to interview me.
 
 Below is the interview prompt I used for _Research Musings_. The interview had three parts: 1. focused questions about how I know a piece is finished, which posts had failed, and what I expect the reader to do with the argument; 2. a sentence-level taste test, where five short passages interpreting the same invented bibliometric finding in different registers had to be ranked and explained; 3. and a final round where the model named contradictions between my stated preferences and the archive, and asked me to resolve them.
 

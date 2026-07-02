@@ -4,6 +4,8 @@ title: DimQuery
 
 # DimQuery <StatusBadge status="live tool" />
 
+DimQuery is a Custom GPT for Dimensions experts: analysts who already know the schema, the field paths, and the bibliometric choices, and need a faster way to write valid BigQuery queries. It is a prompt-only approach, which means the query is composed on the spot: useful for drafting and schema lookup, but without the governed templates or constrained execution that would make it reliable enough to run unsupervised.
+
 DimQuery is a live Custom GPT for writing Dimensions queries on Google BigQuery. It was built for a practical problem: Dimensions has a rich analytical schema, but using it well requires knowing where fields live, which fields repeat, when to UNNEST, how classifications behave, and how easily a query can produce plausible-looking but methodologically wrong results.
 
 The tool is schema-aware and bibliometrically constrained: it has access to the Dimensions data analytics schema, checks field paths against that schema, applies rules for repeated fields, and lists bibliometric choices (e.g., publication-level and assignment-level counting, full counting and other counting logics, open access categories, and the different classification systems available in Dimensions).

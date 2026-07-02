@@ -2,7 +2,7 @@
 defineProps<{
   name: string
   alt: string
-  size?: 'hero' | 'section' | 'sidebar' | 'nav'
+  size?: 'hero' | 'section' | 'article' | 'sidebar'
   mirrored?: boolean
 }>()
 </script>
@@ -27,22 +27,15 @@ defineProps<{
 }
 
 .site-illustration--section {
+  max-width: 350px;
+  width: 100%;
+  height: 350px;
+}
+
+.site-illustration--article {
   max-width: 260px;
   width: 100%;
   height: auto;
-}
-
-.site-illustration--sidebar {
-  max-width: 220px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-top: 32px;
-}
-
-.site-illustration--nav {
-  height: 28px;
-  width: auto;
 }
 
 .site-illustration--mirrored {
@@ -56,10 +49,11 @@ defineProps<{
 
   .site-illustration--section {
     max-width: 180px;
+    height: auto;
   }
 
-  .site-illustration--sidebar {
-    display: none;
+  .site-illustration--article {
+    max-width: 180px;
   }
 }
 </style>

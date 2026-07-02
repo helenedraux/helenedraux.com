@@ -1,6 +1,6 @@
 ---
 title: CV
-description: CV of Hélène Draux — senior data scientist and technical consultant with 9+ years in research intelligence, bibliometrics, and AI-enabled analytics. London, UK.
+description: CV of Hélène Draux: senior data scientist and technical consultant with 9+ years in research intelligence, bibliometrics, and AI-enabled analytics. London, UK.
 aside: true
 outline: deep
 ---
@@ -16,13 +16,13 @@ outline: deep
 
 **Senior Data Scientist & Technical Data Consultant**
 
-Senior data scientist and technical consultant with 9+ years' experience delivering complex analytical projects across data infrastructure, AI-enabled analytics, and research intelligence. I build governed analytical systems: the kind where the method can be reconstructed, the assumptions challenged, and the output defended. The domain is research intelligence and bibliometrics; the constraint is auditability.
+Senior data scientist and technical consultant with 9+ years' experience delivering complex analytical projects across data infrastructure, AI-enabled analytics, and research intelligence. I build governed analytical systems: the method can be reconstructed, the assumptions challenged, and the output defended.
 
 I have repeatedly moved into new technical domains quickly, from spatial data and research methods to large-scale research analytics, BigQuery-based consulting, and LLM-mediated analytical systems, building enough depth to deliver client-facing work, reusable frameworks, and senior stakeholder communication.
 
 ## Experience
 
-### Senior Data Scientist (Thought Leadership) — Digital Science, London
+### Senior Data Scientist (Thought Leadership), Digital Science, London
 *January 2024 – Present*
 
 Leading applied research and public-facing technical work on AI-assisted analytics, data governance, and research-intelligence infrastructure, with a focus on how LLMs can interact reliably with structured analytical data.
@@ -33,7 +33,7 @@ Leading applied research and public-facing technical work on AI-assisted analyti
 - Produced a multi-part technical series on AI-mediated analytics architecture, covering semantic governance, methodological authority, workflow enforcement, and the limits of prompt-only approaches.
 - Contributed to internal best practice on how AI tools should interface with structured data platforms, balancing usability, reproducibility, and analytical validity.
 
-### Data Scientist (Consultancy) — Digital Science, London
+### Data Scientist (Consultancy), Digital Science, London
 *April 2017 – January 2024*
 
 Core member of the research data science team, owning projects end-to-end from problem definition through to client-facing delivery.
@@ -44,14 +44,14 @@ Core member of the research data science team, owning projects end-to-end from p
 - Created Looker dashboards and interactive visualisations to make complex analytical findings accessible to internal and client-facing audiences.
 - Acted as the technical bridge between data infrastructure, analytical methodology, and client needs, translating constraints and trade-offs into practical recommendations.
 
-### Postdoctoral Researcher — Copenhagen University, Copenhagen
+### Postdoctoral Researcher, Copenhagen University, Copenhagen
 *July 2013 – September 2016*
 
 - Led development of a Google Maps-based platform for geolocated data collection and a Leaflet/CartoDB/D3.js platform for public-facing results display.
 - Designed and administered a spatially-enabled citizen science questionnaire from concept through deployment.
 - Delivered methodology lectures in webGIS, outdoor recreation management, and human movement tracking.
 
-### Technical Consultant — Institut National de l'Information Géographique et Forestière, France
+### Technical Consultant, Institut National de l'Information Géographique et Forestière, France
 *February 2011 – April 2013*
 
 - Advised public and private organisations on geographic data acquisition and use.
@@ -59,16 +59,16 @@ Core member of the research data science team, owning projects end-to-end from p
 
 ## Education
 
-- **PhD, Social Geography** — London Metropolitan University, 2010–2013. Participatory GIS and land use planning; EU 7th Framework project (SECOA). Scholarship from Vice-Chancellor scheme.
-- **MSc, Land Management** — Cranfield University, 2007–2008. Dual degree with ENSG; spatial data, environmental systems, GIS, and quantitative analysis applied to real-world land use contexts.
-- **Diplôme d'Ingénieur, Géomatique** — ENSG (École Nationale des Sciences Géographiques), 2005–2008. French Grande École engineering degree. Geodesy, cartography, remote sensing, spatial databases, GIS, statistics, and scientific programming.
-- **Classe Préparatoire (PCSI)** — Lycée Descartes, Tours, 2002–2005. Intensive preparation in physics, chemistry, and mathematics for competitive Grande École entrance.
+- **PhD, Social Geography**: London Metropolitan University, 2010–2013. Participatory GIS and land use planning; EU 7th Framework project (SECOA). Scholarship from Vice-Chancellor scheme.
+- **MSc, Land Management**: Cranfield University, 2007–2008. Dual degree with ENSG; spatial data, environmental systems, GIS, and quantitative analysis applied to real-world land use contexts.
+- **Diplôme d'Ingénieur, Géomatique**: ENSG (École Nationale des Sciences Géographiques), 2005–2008. French Grande École engineering degree. Geodesy, cartography, remote sensing, spatial databases, GIS, statistics, and scientific programming.
+- **Classe Préparatoire (PCSI)**: Lycée Descartes, Tours, 2002–2005. Intensive preparation in physics, chemistry, and mathematics for competitive Grande École entrance.
 
 ## Expertise
 
-- **Data & Analytics** — Python, SQL (advanced), Google BigQuery, Looker, D3.js, CartoDB, Dimensions
-- **AI & Pipelines** — LLM/SLM orchestration, hybrid AI workflows, prompt engineering, conversational AI
-- **Methods** — Data modelling, classification systems, bibliometrics, spatial analysis, GIS
+- **Data & Analytics**: Python, SQL (advanced), Google BigQuery, Looker, D3.js, CartoDB, Dimensions
+- **AI & Pipelines**: LLM/SLM orchestration, hybrid AI workflows, prompt engineering, conversational AI
+- **Methods**: Data modelling, classification systems, bibliometrics, spatial analysis, GIS
 
 ## Languages
 
@@ -76,5 +76,5 @@ French (native) · English (fluent)
 
 ## Selected technical work
 
-- **Conversational Bibliometrics & MCP Governance** — Authored a public technical series on the infrastructure of AI-mediated analytics, with direct relevance to governed semantic-layer design.
-- **Global Research Funder Classification** — End-to-end hybrid AI pipeline: deterministic rules, SLM verification, LLM patching, and LLM-as-judge validation across 7,500 organisations (December 2025).
+- **Conversational Bibliometrics & MCP Governance**: Authored a public technical series on the infrastructure of AI-mediated analytics, with direct relevance to governed semantic-layer design.
+- **Global Research Funder Classification**: End-to-end hybrid AI pipeline: deterministic rules, SLM verification, LLM patching, and LLM-as-judge validation across 7,500 organisations (December 2025).

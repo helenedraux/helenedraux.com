@@ -41,6 +41,7 @@
   --vp-nav-title: var(--vp-c-text-1);
   --vp-nav-divider: var(--vp-c-divider);
   --vp-sidebar-bg-color: #F5F2EC;
+  --vp-sidebar-width: 320px;
   --vp-code-bg: #EDEAE3;
   --vp-code-color: #BA7517;
   --vp-blockquote-border-color: #BA7517;
@@ -68,15 +69,29 @@
 
 @media (min-width: 960px) {
   :root {
-    --rs-page-outer-max-width: 992px;
-    --rs-content-max-width: 960px;
+    --rs-page-outer-max-width: 1240px;
+    --rs-content-max-width: 1200px;
     --rs-content-padding-x: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --rs-page-outer-max-width: 1240px;
+    --rs-content-max-width: 1200px;
+  }
+  /* Sidebar pages: cap content column to preserve readable line length */
+  .VPDoc.has-sidebar:not(.has-diagram-aside) .container {
+    max-width: 88% !important;
   }
 }
 
 @media (min-width: 1440px) {
   :root {
-    --rs-page-outer-max-width: 1104px;
+    --rs-page-outer-max-width: 1300px;
+  }
+  .VPDoc.has-sidebar:not(.has-diagram-aside) .container {
+    max-width: 85% !important;
   }
 }
 
@@ -143,13 +158,6 @@ a:hover {
   font-family: 'Young Serif', Georgia, serif;
   font-weight: 400;
   font-size: 27px;
-}
-
-.nav-brand-icons {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 9px;
-  flex-shrink: 0;
 }
 
 .VPNavBarMenuLink, .VPNavBarMenuGroup .text {
@@ -541,6 +549,18 @@ blockquote {
   padding-right: var(--rs-page-outer-padding-x) !important;
 }
 
+/* Widen the central doc panel on sidebar pages (diagram-aside keeps its own sizing) */
+@media (min-width: 960px) {
+  .VPDoc.has-sidebar:not(.has-diagram-aside) .container {
+    max-width: 90% !important;
+  }
+
+  .VPDoc.has-sidebar:not(.has-diagram-aside) .content,
+  .VPDoc.has-sidebar:not(.has-diagram-aside) .content-container {
+    max-width: 100% !important;
+  }
+}
+
 .VPHome {
   padding-left: var(--rs-page-outer-padding-x);
   padding-right: var(--rs-page-outer-padding-x);
@@ -642,6 +662,34 @@ html:not(.dark) .site-illustration {
   filter: brightness(0) saturate(100%) brightness(0.15);
 }
 
+/* Sidebar standing figures — fixed height for consistency across pages */
+.site-illustration--sidebar {
+  height: 280px;
+  width: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+  margin-top: 32px;
+}
+
+/* Sidebar scene illustrations (page-specific art) — natural height */
+.site-illustration--sidebar-scene {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+  margin-top: 32px;
+}
+
+@media (max-width: 640px) {
+  .site-illustration--sidebar,
+  .site-illustration--sidebar-scene {
+    display: none;
+  }
+}
+
 /* Section landing hero (intro + illustration) */
 .rs-page-hero-layout {
   display: flex;
@@ -665,9 +713,20 @@ html:not(.dark) .site-illustration {
 }
 
 .rs-page-hero-illustration {
-  flex: 0 1 260px;
-  max-width: min(100%, 260px);
+  flex: 0 1 350px;
+  max-width: min(100%, 350px);
   min-width: 160px;
+}
+
+/* Mid widths (e.g. 15" laptops): the content column is capped by the viewport,
+   not by max-width, so the fixed 350px illustration is what squeezes the text.
+   Shrink it here so the text column reclaims the space. Above ~1264px the
+   content max-width binds and there is room for the full-size illustration. */
+@media (min-width: 641px) and (max-width: 1263px) {
+  .rs-page-hero-illustration {
+    flex-basis: 240px;
+    max-width: min(28%, 240px);
+  }
 }
 
 @media (max-width: 640px) {
