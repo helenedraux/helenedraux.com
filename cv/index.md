@@ -1,6 +1,6 @@
 ---
 title: CV
-description: CV of Hélène Draux: senior data scientist and technical consultant with 9+ years in research intelligence, bibliometrics, and AI-enabled analytics. London, UK.
+description: "CV of Hélène Draux: senior data scientist and technical consultant with 9+ years in research intelligence, bibliometrics, and AI-enabled analytics. London, UK."
 aside: true
 outline: deep
 ---
