@@ -1,6 +1,6 @@
 ---
-title: Writing
-description: Technical writing on bibliometrics, AI-mediated analytics, and research intelligence — published on Research Musings (Substack) and helenedraux.com.
+title: Writing on Research Intelligence & AI Analytics | Hélène Draux
+description: "Research Musings: a Substack on bibliometrics, AI-assisted analytics, and how knowledge is made and measured. Plus technical writing on data visualisation and AI voice methods."
 sidebar: false
 prev: false
 next: false

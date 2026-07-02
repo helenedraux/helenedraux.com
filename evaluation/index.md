@@ -1,6 +1,6 @@
 ---
-title: Evaluation
-description: Frameworks for systematic validation and verification of LLM outputs in analytical contexts — including AV/VA, red-teaming an analytical agent, and LLM benchmarking methodology.
+title: AI Output Validation & LLM Evaluation Frameworks | Hélène Draux
+description: "Practical frameworks for validating AI outputs in analytical contexts: AV|VA proportionate verification, LLM comparison methodology, red-teaming analytical agents."
 sidebar: false
 prev: false
 next: false

@@ -1,6 +1,6 @@
 ---
-title: Builds
-description: "Personal and exploratory builds: a local-first work tracker using SLMs, and a privacy-respecting voice assistant for children built on Raspberry Pi."
+title: "Technical Builds: Local AI & Data Tools | Hélène Draux"
+description: "Personal technical projects: a local-first work tracker built on deterministic + SLM summarisation, and a privacy-first voice assistant for children using Raspberry Pi."
 sidebar: false
 prev: false
 next: false

@@ -16,7 +16,7 @@ After my experience related in the Vacuity Index _Research musings_, I realised 
   <ColorModeImage
     light="/diagrams/av_va_risk_routing_light.svg"
     dark="/diagrams/av_va_risk_routing_dark.svg"
-    alt="Validation and verification with risk-proportional routing"
+    alt="AV|VA validation and verification framework with risk-proportional routing"
   />
 </p>
 

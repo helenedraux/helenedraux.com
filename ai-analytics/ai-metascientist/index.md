@@ -10,7 +10,7 @@ diagramAside: true
   <ColorModeImage
     light="/diagrams/ai_metascientist_architecture_light.svg"
     dark="/diagrams/ai_metascientist_architecture_dark.svg"
-    alt="AI metascientist architecture"
+    alt="Architecture diagram of the AI metascientist: interpretation, scoping, and execution layers"
   />
 </p>
 
@@ -20,7 +20,7 @@ The AI metascientist is a conversational AI aimed at building bibliometrics anal
   <ColorModeImage
     light="/diagrams/conversational_bibliometrics_positioning_light.svg"
     dark="/diagrams/conversational_bibliometrics_positioning_dark.svg"
-    alt="Conversational bibliometrics positioning"
+    alt="Diagram positioning conversational bibliometrics tools by governance and user expertise"
   />
 </p>
 

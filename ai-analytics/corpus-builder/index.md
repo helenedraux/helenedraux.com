@@ -9,7 +9,7 @@ diagramAside: true
   <ColorModeImage
     light="/diagrams/corpus_builder_linear_light.svg"
     dark="/diagrams/corpus_builder_linear_dark.svg"
-    alt="Claude Projects workflow"
+    alt="Linear workflow diagram of the corpus builder stages"
   />
 </p>
 

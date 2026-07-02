@@ -6,6 +6,11 @@ export default defineConfig({
   description: 'methods for knowledge and evaluation',
   cleanUrls: true,
   srcExclude: ['**/_drafts/**', '**/_review/**'],
+  lastUpdated: true,
+
+  sitemap: {
+    hostname: 'https://helenedraux.com',
+  },
 
   themeConfig: {
     aside: false,

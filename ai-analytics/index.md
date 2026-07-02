@@ -1,6 +1,6 @@
 ---
-title: AI analytics
-description: "Governed architectures for AI-mediated bibliometric analysis: conversational workflows, LLM integration with structured data, and audit-ready analytical pipelines using Dimensions and BigQuery."
+title: AI Analytics for Research Data · Conversational Bibliometrics | Hélène Draux
+description: "Governed AI analytics built on bibliometric and research data: conversational bibliometrics, LLM workflow architecture, BigQuery pipelines, and auditable AI-mediated analysis."
 sidebar: false
 prev: false
 next: false

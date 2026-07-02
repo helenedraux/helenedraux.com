@@ -1,6 +1,6 @@
 ---
-title: CV
-description: "CV of Hélène Draux: senior data scientist and technical consultant with 9+ years in research intelligence, bibliometrics, and AI-enabled analytics. London, UK."
+title: CV — Hélène Draux, Senior Data Scientist & Research Intelligence Consultant
+description: "CV of Hélène Draux: Senior Data Scientist at Digital Science, London. 9+ years in research intelligence, bibliometrics, BigQuery analytics, and governed AI systems."
 aside: true
 outline: deep
 ---
@@ -19,6 +19,8 @@ outline: deep
 Senior data scientist and technical consultant with 9+ years' experience delivering complex analytical projects across data infrastructure, AI-enabled analytics, and research intelligence. I build governed analytical systems: the method can be reconstructed, the assumptions challenged, and the output defended.
 
 I have repeatedly moved into new technical domains quickly, from spatial data and research methods to large-scale research analytics, BigQuery-based consulting, and LLM-mediated analytical systems, building enough depth to deliver client-facing work, reusable frameworks, and senior stakeholder communication.
+
+CV of Hélène Draux, Senior Data Scientist at Digital Science, London — available for senior roles and consulting in research intelligence, AI analytics, and bibliometric data science.
 
 ## Experience
 
@@ -76,5 +78,5 @@ French (native) · English (fluent)
 
 ## Selected technical work
 
-- **Conversational Bibliometrics & MCP Governance**: Authored a public technical series on the infrastructure of AI-mediated analytics, with direct relevance to governed semantic-layer design.
-- **Global Research Funder Classification**: End-to-end hybrid AI pipeline: deterministic rules, SLM verification, LLM patching, and LLM-as-judge validation across 7,500 organisations (December 2025).
+- **[Conversational Bibliometrics & MCP Governance](/ai-analytics/)**: Authored a public technical series on the infrastructure of AI-mediated analytics, with direct relevance to governed semantic-layer design.
+- **[Global Research Funder Classification](/ai-analytics/grid-plus/)**: End-to-end hybrid AI pipeline: deterministic rules, SLM verification, LLM patching, and LLM-as-judge validation across 7,500 organisations (December 2025).
