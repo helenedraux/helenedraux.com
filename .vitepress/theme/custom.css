@@ -662,12 +662,11 @@ html:not(.dark) .site-illustration {
   filter: brightness(0) saturate(100%) brightness(0.15);
 }
 
-/* Sidebar standing figures — fixed height for consistency across pages */
+/* Sidebar standing figures — height-led sizing (tall slim SVGs cap by height) */
 .site-illustration--sidebar {
-  height: 280px;
-  width: 100%;
-  object-fit: contain;
-  object-position: bottom;
+  height: 340px;
+  width: auto;
+  max-width: 100%;
   display: block;
   margin-top: 32px;
 }
