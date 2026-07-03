@@ -662,24 +662,25 @@ html:not(.dark) .site-illustration {
   filter: brightness(0) saturate(100%) brightness(0.15);
 }
 
-/* Sidebar standing figures — height-led sizing (tall slim SVGs cap by height) */
-.site-illustration--sidebar {
-  height: 340px;
-  width: auto;
-  max-width: 100%;
+/* Sidebar standing figures — oversized, full-bleed to sidebar edges, cut off at the bottom */
+.site-illustration--sidebar:not(.site-illustration--sidebar-scene) {
+  width: calc(100% + 64px);
+  max-width: none;
+  height: auto;
+  margin: 24px -32px 0;
   display: block;
-  margin-top: 32px;
 }
 
 /* Sidebar scene illustrations (page-specific art) — natural height */
 .site-illustration--sidebar-scene {
-  max-width: 300px;
-  width: 100%;
+  max-width: none;
+  width: 360px;
   height: auto;
   object-fit: contain;
   object-position: bottom;
   display: block;
   margin-top: 32px;
+  margin-left: -40px;
 }
 
 @media (max-width: 640px) {
