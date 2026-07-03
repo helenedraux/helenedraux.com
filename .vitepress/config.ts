@@ -27,6 +27,7 @@ export default defineConfig({
       { text: 'Writing', link: '/writing/', activeMatch: '^/writing/' },
       { text: 'Builds', link: '/builds/', activeMatch: '^/builds/' },
       { text: 'CV', link: '/cv/' },
+      { text: 'Site map', link: '/map/' },
     ],
 
     sidebar: {

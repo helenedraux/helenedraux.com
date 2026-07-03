@@ -31,50 +31,71 @@ interface GraphData {
 const COLORS = {
   bg: '#1a1a1a',
   text: '#e8e0d0',
-  nodeStroke: '#b97818',
-  nodeFill: '#b97818',
-  activeFill: '#e7b35a',
   edgeExplicit: 'rgba(185, 120, 24, 0.7)',
   edgeThematic: 'rgba(185, 120, 24, 0.35)',
   edgeWeak: 'rgba(185, 120, 24, 0.15)',
+  edgeBright: 'rgba(185, 120, 24, 1)',
   tooltipBorder: 'rgba(185, 120, 24, 0.5)',
   dim: 0.15,
 }
 
-const RADIUS = 9
+const RADIUS = 8
 
-// Section cluster anchors, expressed as fractions of the stage width/height.
+// Section cluster anchors — compact layout centred in the graph area
+// (the container already sits right of the left panel).
 const ANCHORS: Record<RawNode['section'], { x: number; y: number }> = {
-  'ai-analytics': { x: 0.55, y: 0.27 },
-  evaluation: { x: 0.82, y: 0.4 },
-  builds: { x: 0.2, y: 0.72 },
-  writing: { x: 0.67, y: 0.78 },
+  'ai-analytics': { x: 0.32, y: 0.3 },
+  evaluation: { x: 0.5, y: 0.42 },
+  builds: { x: 0.2, y: 0.62 },
+  writing: { x: 0.4, y: 0.72 },
 }
 
 const TYPE_RANK: Record<string, number> = { weak: 1, thematic: 2, explicit: 3 }
 
 const tags = ref<Tag[]>([])
-const activeTags = ref<string[]>([])
+const activeTag = ref<string | null>(null)
 const helpOpen = ref(true)
+
+const router = useRouter()
 
 let cleanup: (() => void) | null = null
 let applyFilterRef: (() => void) | null = null
+let remeasureHelpRef: (() => void) | null = null
 
 function toggleTag(id: string) {
-  const idx = activeTags.value.indexOf(id)
-  if (idx === -1) activeTags.value = [...activeTags.value, id]
-  else activeTags.value = activeTags.value.filter((t) => t !== id)
+  activeTag.value = activeTag.value === id ? null : id
   applyFilterRef?.()
+}
+
+function toggleHelp() {
+  helpOpen.value = !helpOpen.value
+  // Panel height changed; re-measure its box after Vue paints.
+  requestAnimationFrame(() => remeasureHelpRef?.())
 }
 
 function statusLabel(status: string) {
   return status.replace(/-/g, ' ')
 }
 
+// Read a CSS custom property from :root, falling back to a default.
+function cssVar(name: string, fallback: string) {
+  if (typeof window === 'undefined') return fallback
+  const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim()
+  return v || fallback
+}
+
 onMounted(async () => {
   if (typeof window === 'undefined') return
 
-  const router = useRouter()
+  // Section colours are the active-nav-link accent per section, read from the
+  // site's existing CSS variables rather than hardcoded.
+  const SECTION_COLOR: Record<RawNode['section'], string> = {
+    'ai-analytics': cssVar('--rs-accent-ai-analytics', '#534AB7'),
+    evaluation: cssVar('--rs-accent-evaluation', '#0F6E56'),
+    builds: cssVar('--rs-accent-default', '#F5A800'),
+    writing: cssVar('--rs-accent-default', '#F5A800'),
+  }
+
   // Load D3 v7 as an ES module from CDN. @vite-ignore keeps Vite from
   // trying to resolve the remote URL at build time.
   const d3: any = await import(/* @vite-ignore */ 'https://cdn.jsdelivr.net/npm/d3@7/+esm')
@@ -91,14 +112,14 @@ onMounted(async () => {
   let width = container.clientWidth || 800
   let height = container.clientHeight || 600
 
-  // ---- nodes ----
+  // ---- nodes: seed positions clustered by section ----
   const nodes = data.nodes.map((n) => {
     const a = ANCHORS[n.section]
     return {
       ...n,
       tagSet: new Set(n.tags),
-      x: a.x * width + (Math.random() - 0.5) * 120,
-      y: a.y * height + (Math.random() - 0.5) * 120,
+      x: a.x * width + (Math.random() - 0.5) * 90,
+      y: a.y * height + (Math.random() - 0.5) * 90,
     }
   })
   const nodeById = new Map(nodes.map((n) => [n.id, n]))
@@ -131,24 +152,37 @@ onMounted(async () => {
     .attr('viewBox', `0 0 ${width} ${height}`)
     .style('display', 'block')
 
-  const linkSel = svg
-    .append('g')
-    .attr('fill', 'none')
-    .selectAll('line')
+  function baseStroke(d: any) {
+    return d.type === 'explicit'
+      ? COLORS.edgeExplicit
+      : d.type === 'thematic'
+        ? COLORS.edgeThematic
+        : COLORS.edgeWeak
+  }
+
+  const linkLayer = svg.append('g').attr('fill', 'none')
+
+  // Wide, transparent hit lines make thin edges easy to hover.
+  const linkHit = linkLayer
+    .selectAll('line.rs-map-hit')
     .data(links)
     .join('line')
-    .attr('stroke', (d: any) =>
-      d.type === 'explicit'
-        ? COLORS.edgeExplicit
-        : d.type === 'thematic'
-          ? COLORS.edgeThematic
-          : COLORS.edgeWeak,
-    )
+    .attr('class', 'rs-map-hit')
+    .attr('stroke', 'transparent')
+    .attr('stroke-width', 14)
+    .style('cursor', 'default')
+
+  const linkSel = linkLayer
+    .selectAll('line.rs-map-edge')
+    .data(links)
+    .join('line')
+    .attr('class', 'rs-map-edge')
+    .attr('stroke', baseStroke)
     .attr('stroke-width', (d: any) => (d.type === 'explicit' ? 1.6 : 1.2))
     .attr('stroke-dasharray', (d: any) =>
       d.type === 'thematic' ? '6 5' : d.type === 'weak' ? '2 5' : null,
     )
-    .style('cursor', 'default')
+    .style('pointer-events', 'none')
 
   const nodeSel = svg
     .append('g')
@@ -156,25 +190,26 @@ onMounted(async () => {
     .data(nodes)
     .join('g')
     .attr('class', 'rs-map-node')
-    .style('cursor', 'pointer')
 
-  nodeSel
+  const circleSel = nodeSel
     .append('circle')
     .attr('r', RADIUS)
-    .attr('fill', COLORS.nodeFill)
-    .attr('stroke', COLORS.nodeStroke)
+    .attr('fill', (d: any) => SECTION_COLOR[d.section])
+    .attr('fill-opacity', 1)
+    .attr('stroke', (d: any) => SECTION_COLOR[d.section])
     .attr('stroke-width', 1.5)
+    .style('cursor', 'pointer')
 
   nodeSel
     .append('text')
     .text((d: any) => d.title)
     .attr('text-anchor', 'middle')
-    .attr('y', RADIUS + 14)
+    .attr('y', RADIUS + 15)
     .attr('fill', COLORS.text)
     .style('font-family', 'var(--vp-font-family-base)')
     .style('font-size', '13px')
     .style('user-select', 'text')
-    .style('pointer-events', 'none')
+    .style('cursor', 'text')
 
   // ---- tooltip ----
   const tooltip = d3
@@ -197,18 +232,19 @@ onMounted(async () => {
   function moveTooltip(event: MouseEvent) {
     const rect = container!.getBoundingClientRect()
     tooltip
+      .style('transform', 'none')
       .style('left', `${event.clientX - rect.left + 14}px`)
       .style('top', `${event.clientY - rect.top + 14}px`)
   }
 
-  // ---- highlight helpers ----
-  const neighbours = new Map<string, Set<string>>()
-  nodes.forEach((n) => neighbours.set(n.id, new Set([n.id])))
-  links.forEach((l: any) => {
-    neighbours.get(l.source.id ?? l.source)!.add(l.target.id ?? l.target)
-    neighbours.get(l.target.id ?? l.target)!.add(l.source.id ?? l.source)
-  })
+  function placeTooltip(x: number, y: number) {
+    tooltip
+      .style('left', `${x}px`)
+      .style('top', `${y}px`)
+      .style('transform', 'translate(-50%, -130%)')
+  }
 
+  // ---- neighbours for hover highlight ----
   function linkSource(l: any) {
     return l.source.id ?? l.source
   }
@@ -216,67 +252,63 @@ onMounted(async () => {
     return l.target.id ?? l.target
   }
 
-  function passesTagFilter(n: any) {
-    if (activeTags.value.length === 0) return true
-    return activeTags.value.every((t) => n.tagSet.has(t))
-  }
+  const neighbours = new Map<string, Set<string>>()
+  nodes.forEach((n) => neighbours.set(n.id, new Set([n.id])))
+  links.forEach((l: any) => {
+    neighbours.get(linkSource(l))!.add(linkTarget(l))
+    neighbours.get(linkTarget(l))!.add(linkSource(l))
+  })
 
+  // ---- tag filter ----
   function applyFilter() {
-    const filtering = activeTags.value.length > 0
-    nodeSel.style('opacity', (d: any) =>
-      !filtering || passesTagFilter(d) ? 1 : COLORS.dim,
-    )
+    const tag = activeTag.value
+    if (!tag) {
+      nodeSel.style('opacity', 1)
+      linkSel.style('opacity', 1)
+      return
+    }
+    nodeSel.style('opacity', (d: any) => (d.tagSet.has(tag) ? 1 : COLORS.dim))
     linkSel.style('opacity', (l: any) => {
-      if (!filtering) return 1
       const s = nodeById.get(linkSource(l))!
       const t = nodeById.get(linkTarget(l))!
-      return passesTagFilter(s) && passesTagFilter(t) ? 1 : COLORS.dim
+      return s.tagSet.has(tag) && t.tagSet.has(tag) ? 1 : COLORS.dim
     })
   }
   applyFilterRef = applyFilter
 
+  // ---- hover highlight ----
   function highlightNode(d: any) {
     const related = neighbours.get(d.id)!
     nodeSel.style('opacity', (o: any) => (related.has(o.id) ? 1 : COLORS.dim))
-    nodeSel
-      .select('circle')
-      .attr('fill', (o: any) => (o.id === d.id ? COLORS.activeFill : COLORS.nodeFill))
+    circleSel
+      .attr('fill-opacity', (o: any) => (o.id === d.id ? 0.2 : 1))
+      .attr('stroke-width', (o: any) => (o.id === d.id ? 2.5 : 1.5))
     linkSel
       .style('opacity', (l: any) =>
         linkSource(l) === d.id || linkTarget(l) === d.id ? 1 : COLORS.dim,
       )
       .attr('stroke', (l: any) =>
         linkSource(l) === d.id || linkTarget(l) === d.id
-          ? COLORS.edgeExplicit
-          : l.type === 'explicit'
-            ? COLORS.edgeExplicit
-            : l.type === 'thematic'
-              ? COLORS.edgeThematic
-              : COLORS.edgeWeak,
+          ? COLORS.edgeBright
+          : baseStroke(l),
       )
   }
 
   function clearHighlight() {
-    nodeSel.select('circle').attr('fill', COLORS.nodeFill)
-    linkSel.attr('stroke', (d: any) =>
-      d.type === 'explicit'
-        ? COLORS.edgeExplicit
-        : d.type === 'thematic'
-          ? COLORS.edgeThematic
-          : COLORS.edgeWeak,
-    )
+    circleSel.attr('fill-opacity', 1).attr('stroke-width', 1.5)
+    linkSel.attr('stroke', baseStroke)
     applyFilter()
   }
 
   // ---- node interactions ----
-  nodeSel
+  circleSel
     .on('mouseenter', function (event: MouseEvent, d: any) {
       highlightNode(d)
       const tagsStr = d.tags.map((t: string) => tagLabel.get(t) || t).join(' \u00b7 ')
       tooltip
         .html(
           `<div style="font-weight:600;margin-bottom:2px">${d.title}</div>` +
-            `<div style="color:${COLORS.nodeStroke};text-transform:capitalize">${statusLabel(
+            `<div style="color:rgba(185,120,24,1);text-transform:capitalize">${statusLabel(
               d.status,
             )}</div>` +
             (tagsStr ? `<div style="margin-top:4px">Tags: ${tagsStr}</div>` : ''),
@@ -295,41 +327,84 @@ onMounted(async () => {
     })
 
   // ---- edge interactions ----
-  linkSel
+  linkHit
     .on('mouseenter', function (event: MouseEvent, d: any) {
       const labels = d.shared.map((t: string) => tagLabel.get(t) || t)
       const body = labels.length
-        ? `Shared: ${labels.join(' \u00b7 ')}`
+        ? `Shared tags: ${labels.join(' \u00b7 ')}`
         : 'No shared tags'
-      tooltip
-        .html(`<div>${body}</div>`)
-        .style('opacity', 1)
-      moveTooltip(event)
+      tooltip.html(`<div>${body}</div>`).style('opacity', 1)
+      const mx = (d.source.x + d.target.x) / 2
+      const my = (d.source.y + d.target.y) / 2
+      placeTooltip(mx, my)
     })
-    .on('mousemove', (event: MouseEvent) => moveTooltip(event))
     .on('mouseleave', () => tooltip.style('opacity', 0))
 
   // ---- simulation ----
   const linkForce = d3
     .forceLink(links)
     .id((d: any) => d.id)
-    .distance(130)
-    .strength(0.25)
+    .distance(120)
+    .strength(0.22)
 
   const simulation = d3
     .forceSimulation(nodes)
     .force('link', linkForce)
-    .force('charge', d3.forceManyBody().strength(-420))
-    .force('collide', d3.forceCollide(RADIUS + 34))
+    .force('charge', d3.forceManyBody().strength(-360))
+    .force('collide', d3.forceCollide(RADIUS + 28))
     .force('x', d3.forceX((d: any) => ANCHORS[d.section].x * width).strength(0.08))
     .force('y', d3.forceY((d: any) => ANCHORS[d.section].y * height).strength(0.08))
     .stop()
 
-  // Settle before first paint.
-  for (let i = 0; i < 300; i++) simulation.tick()
+  // Keep nodes inside the graph and clear of the floating "How to explore"
+  // panel, whose rectangle we measure relative to the container.
+  const PAD = RADIUS + 6
+  let helpBox: { x0: number; y0: number } | null = null
+  function measureHelpBox() {
+    const help = container!.parentElement?.querySelector<HTMLElement>('.rs-map__help')
+    if (!help || help.offsetParent === null) {
+      helpBox = null
+      return
+    }
+    const cRect = container!.getBoundingClientRect()
+    const hRect = help.getBoundingClientRect()
+    helpBox = {
+      x0: hRect.left - cRect.left - PAD,
+      y0: hRect.bottom - cRect.top + PAD,
+    }
+  }
+  measureHelpBox()
+  remeasureHelpRef = () => {
+    measureHelpBox()
+    if (!dragging) simulation.alpha(0.15).restart()
+  }
+
+  function clampNodes() {
+    for (const d of nodes as any[]) {
+      d.x = Math.max(PAD, Math.min(width - PAD, d.x))
+      d.y = Math.max(PAD, Math.min(height - PAD, d.y))
+      // Push out of the top-right help panel box.
+      if (helpBox && d.x > helpBox.x0 && d.y < helpBox.y0) {
+        if (helpBox.x0 - d.x > d.y - helpBox.y0) d.y = helpBox.y0
+        else d.x = helpBox.x0
+      }
+    }
+  }
+
+  // Settle before first paint so nodes never overlap on initial render.
+  for (let i = 0; i < 300; i++) {
+    simulation.tick()
+    clampNodes()
+  }
 
   function ticked() {
+    clampNodes()
     linkSel
+      .attr('x1', (d: any) => d.source.x)
+      .attr('y1', (d: any) => d.source.y)
+      .attr('x2', (d: any) => d.target.x)
+      .attr('y2', (d: any) => d.target.y)
+    linkHit
       .attr('x1', (d: any) => d.source.x)
       .attr('y1', (d: any) => d.source.y)
       .attr('x2', (d: any) => d.target.x)
@@ -340,7 +415,7 @@ onMounted(async () => {
   simulation.on('tick', ticked)
   ticked()
 
-  // Gentle continued settle from the seeded layout.
+  // Gentle continued settle animated from the seeded layout.
   simulation.alpha(0.25).restart()
 
   // ---- drag ----
@@ -363,12 +438,12 @@ onMounted(async () => {
       dragging = false
       if (!event.active) simulation.alphaTarget(0)
       // Restore link strength and release the node so it eases back toward
-      // its cluster anchor with the default alpha decay bounce.
-      linkForce.strength(0.25)
+      // its cluster anchor with the default alpha-decay bounce.
+      linkForce.strength(0.22)
       d.fx = null
       d.fy = null
     })
-  nodeSel.call(drag)
+  circleSel.call(drag)
 
   // ---- resize ----
   function onResize() {
@@ -388,12 +463,14 @@ onMounted(async () => {
       'y',
       d3.forceY((d: any) => ANCHORS[d.section].y * height).strength(0.08),
     )
+    measureHelpBox()
     if (!dragging) simulation.alpha(0.1).restart()
   }
   window.addEventListener('resize', onResize)
 
   cleanup = () => {
     window.removeEventListener('resize', onResize)
+    remeasureHelpRef = null
     simulation.stop()
     svg.remove()
     tooltip.remove()
@@ -408,41 +485,59 @@ onBeforeUnmount(() => {
 <template>
   <div class="rs-map">
     <div class="rs-map__stage">
-      <aside class="rs-map__intro">
-        <div class="rs-map__intro-title">A network of ideas and projects</div>
+      <aside class="rs-map__panel">
+        <div class="rs-map__title">A network of ideas and projects</div>
         <hr class="rs-map__rule" />
-        <p>
-          Nodes are this website's pages, edges are the links, be they explicit
-          references or thematic connections.<br />
-          Click a tag to pick up a thread.
+        <p class="rs-map__intro">
+          Nodes are this website's pages, edges are the links — explicit
+          references or thematic connections. Click a tag to pick up a thread.
         </p>
-        <div class="rs-map__legend">
+
+        <div class="rs-map__sections">
+          <span class="rs-map__sec">
+            <span
+              class="rs-map__dot"
+              :style="{ background: 'var(--rs-accent-ai-analytics)' }"
+            ></span>
+            AI analytics
+          </span>
+          <span class="rs-map__sec">
+            <span
+              class="rs-map__dot"
+              :style="{ background: 'var(--rs-accent-evaluation)' }"
+            ></span>
+            Evaluation
+          </span>
+        </div>
+
+        <div class="rs-map__edges">
           <span><span class="rs-map__glyph rs-map__glyph--solid"></span>Explicit</span>
           <span><span class="rs-map__glyph rs-map__glyph--dashed"></span>Thematic</span>
           <span><span class="rs-map__glyph rs-map__glyph--dotted"></span>Loose</span>
         </div>
+
+        <div class="rs-map__tags">
+          <button
+            v-for="tag in tags"
+            :key="tag.id"
+            type="button"
+            class="rs-map__tag"
+            :class="{ 'rs-map__tag--hollow': activeTag !== null && activeTag !== tag.id }"
+            @click="toggleTag(tag.id)"
+          >
+            {{ tag.label }}
+          </button>
+        </div>
       </aside>
 
-      <div class="rs-map__tags">
-        <button
-          v-for="tag in tags"
-          :key="tag.id"
-          type="button"
-          class="rs-map__tag"
-          :class="{ 'rs-map__tag--active': activeTags.includes(tag.id) }"
-          @click="toggleTag(tag.id)"
-        >
-          {{ tag.label }}
-        </button>
-      </div>
-
       <div class="rs-map__help" :class="{ 'rs-map__help--collapsed': !helpOpen }">
-        <button class="rs-map__help-toggle" type="button" @click="helpOpen = !helpOpen">
+        <button class="rs-map__help-toggle" type="button" @click="toggleHelp">
           How to explore
           <span aria-hidden="true">{{ helpOpen ? '−' : '+' }}</span>
         </button>
         <ul v-show="helpOpen">
           <li><span class="rs-map__help-glyph">○</span> Hover a node to see related pages and link tags.</li>
+          <li><span class="rs-map__help-glyph">↗</span> Click a node to open its page.</li>
           <li><span class="rs-map__help-glyph">◇</span> Click a tag to highlight related pages.</li>
         </ul>
       </div>
@@ -469,15 +564,17 @@ onBeforeUnmount(() => {
   height: calc(100vh - var(--vp-nav-height, 64px));
 }
 
+/* Graph fills the space to the right of the left panel. */
 #site-map-container {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 244px;
   overflow: hidden;
 }
 
-.rs-map__intro {
+.rs-map__panel {
   position: absolute;
   top: 24px;
   left: 24px;
@@ -490,9 +587,10 @@ onBeforeUnmount(() => {
   pointer-events: none;
 }
 
-.rs-map__intro-title {
+.rs-map__title {
   font-family: 'Young Serif', Georgia, serif;
   font-size: 20px;
+  line-height: 1.3;
 }
 
 .rs-map__rule {
@@ -501,29 +599,52 @@ onBeforeUnmount(() => {
   margin: 12px 0;
 }
 
-.rs-map__intro p {
-  margin: 0 0 14px;
-  color: rgba(232, 224, 208, 0.85);
-}
-
-.rs-map__legend {
+.rs-map__intro {
   margin: 0 0 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 14px;
   color: rgba(232, 224, 208, 0.85);
 }
 
-.rs-map__legend > span {
+.rs-map__sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin: 0 0 16px;
+  color: rgba(232, 224, 208, 0.9);
+}
+
+.rs-map__sec {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.rs-map__dot {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  border-radius: 50%;
+}
+
+.rs-map__edges {
+  margin: 0 0 18px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0 10px;
+  color: rgba(232, 224, 208, 0.85);
+  white-space: nowrap;
+}
+
+.rs-map__edges > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   white-space: nowrap;
 }
 
 .rs-map__glyph {
-  width: 22px;
-  flex: 0 0 22px;
+  width: 16px;
+  flex: 0 0 16px;
   height: 0;
   border-top-width: 2px;
   border-top-color: var(--map-amber);
@@ -539,6 +660,32 @@ onBeforeUnmount(() => {
 
 .rs-map__glyph--dotted {
   border-top-style: dotted;
+}
+
+.rs-map__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.rs-map__tag {
+  background: rgba(185, 120, 24, 0.15);
+  border: 1px solid rgba(185, 120, 24, 0.55);
+  border-radius: 999px;
+  color: var(--map-text);
+  font-family: var(--vp-font-family-base);
+  font-size: 12px;
+  line-height: 1.3;
+  padding: 4px 11px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.rs-map__tag--hollow {
+  background: transparent;
+  border-color: rgba(232, 224, 208, 0.25);
+  color: rgba(232, 224, 208, 0.45);
 }
 
 .rs-map__help {
@@ -581,57 +728,22 @@ onBeforeUnmount(() => {
   margin-right: 6px;
 }
 
-.rs-map__tags {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  width: 220px;
-  z-index: 3;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  pointer-events: auto;
-}
-
-.rs-map__tag {
-  background: transparent;
-  border: 1px solid rgba(185, 120, 24, 0.35);
-  border-radius: 999px;
-  color: rgba(232, 224, 208, 0.6);
-  font-family: var(--vp-font-family-base);
-  font-size: 12px;
-  line-height: 1.3;
-  padding: 4px 11px;
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.rs-map__tag:hover {
-  background: rgba(185, 120, 24, 0.1);
-}
-
-.rs-map__tag--active {
-  background: rgba(185, 120, 24, 0.2);
-  color: var(--map-amber);
-  border-color: rgba(185, 120, 24, 0.6);
-}
-
 @media (max-width: 720px) {
-  .rs-map__intro {
+  .rs-map__stage {
+    height: auto;
+  }
+  .rs-map__panel {
     position: static;
     width: auto;
     padding: 16px 24px 0;
   }
-  .rs-map__tags {
-    position: static;
-    width: auto;
-    padding: 0 24px 16px;
-  }
   .rs-map__help {
     display: none;
   }
-  .rs-map__stage {
-    height: 70vh;
+  #site-map-container {
+    position: relative;
+    left: 0;
+    height: 65vh;
   }
 }
 </style>

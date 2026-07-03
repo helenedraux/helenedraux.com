@@ -201,6 +201,25 @@ a:hover {
   color: var(--rs-section-accent, var(--vp-c-brand-1));
 }
 
+/* Site map — utility nav link, set apart from the content sections after CV
+   with a divider matching the dark-mode toggle separator. */
+.VPNavBarMenuLink[href='/map/'] {
+  position: relative;
+  margin-left: 8px;
+  padding-left: 20px;
+}
+
+.VPNavBarMenuLink[href='/map/']::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 24px;
+  background-color: var(--vp-c-divider);
+}
+
 /* Sidebar — section title + light link boxes (inner pages) */
 .VPSidebar .VPSidebarItem.level-0 .items {
   border-left: none;
@@ -630,6 +649,17 @@ blockquote {
 
 .rs-home-statement a[href='/evaluation/']:hover {
   color: var(--rs-accent-evaluation);
+}
+
+/* Home map link — caption below the illustration, aligned to its right edge */
+.vp-doc a.rs-home-map-link,
+.vp-doc a.rs-home-map-link:hover {
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
 }
 
 /* Beat .vp-doc a { text-decoration: underline } */

@@ -11,10 +11,9 @@ description: Senior data scientist with 9+ years delivering research intelligenc
   </div>
   <div class="rs-home-hero-illustration">
     <SiteIllustration name="laptop_robot" alt="Hélène at her laptop, with a small robot nearby" size="hero" />
+    <a class="rs-home-map-link" href="/map/">Explore how the work connects →</a>
   </div>
 </div>
-
-[Explore how the work connects →](/map/)
 
 Welcome! I'm Hélène. I build analytics you can reproduce, defend, and audit, which means I take it slow. I don't give an answer in two minutes: I [confirm the premises](https://helenedraux.com/evaluation/av-va/), show partial results, and steer before the full analysis runs, then shape the writing-up. Every step where judgment matters is confirmed and logged.
 
