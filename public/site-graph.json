@@ -1,0 +1,208 @@
+{
+  "nodes": [
+    {
+      "id": "ai-metascientist",
+      "path": "/ai-analytics/ai-metascientist/",
+      "title": "The AI metascientist",
+      "section": "ai-analytics",
+      "status": "proof-of-concept",
+      "tags": ["governance", "conversational-bibliometrics", "verification"],
+      "links_to": [
+        {"id": "corpus-builder", "type": "explicit"},
+        {"id": "biblioflow", "type": "explicit"},
+        {"id": "av-va", "type": "thematic"}
+      ]
+    },
+    {
+      "id": "dimquery",
+      "path": "/ai-analytics/dimquery/",
+      "title": "DimQuery",
+      "section": "ai-analytics",
+      "status": "live",
+      "tags": ["conversational-bibliometrics", "bigquery"],
+      "links_to": [
+        {"id": "ai-metascientist", "type": "thematic"},
+        {"id": "biblioflow", "type": "thematic"},
+        {"id": "journalscape", "type": "weak"}
+      ]
+    },
+    {
+      "id": "corpus-builder",
+      "path": "/ai-analytics/corpus-builder/",
+      "title": "Claude Projects",
+      "section": "ai-analytics",
+      "status": "implemented",
+      "tags": ["governance", "conversational-bibliometrics", "corpus"],
+      "links_to": [
+        {"id": "ai-metascientist", "type": "explicit"},
+        {"id": "biblioflow", "type": "explicit"}
+      ]
+    },
+    {
+      "id": "biblioflow",
+      "path": "/ai-analytics/biblioflow/",
+      "title": "Biblioflow",
+      "section": "ai-analytics",
+      "status": "concept",
+      "tags": ["governance", "conversational-bibliometrics", "local-first", "small-models", "bigquery"],
+      "links_to": [
+        {"id": "ai-metascientist", "type": "explicit"},
+        {"id": "corpus-builder", "type": "explicit"},
+        {"id": "verification-comparison", "type": "thematic"},
+        {"id": "grid-plus", "type": "thematic"}
+      ]
+    },
+    {
+      "id": "grid-plus",
+      "path": "/ai-analytics/grid-plus/",
+      "title": "Research org typology",
+      "section": "ai-analytics",
+      "status": "validated",
+      "tags": ["classification", "small-models", "verification", "corpus", "bigquery"],
+      "links_to": [
+        {"id": "journalscape", "type": "thematic"},
+        {"id": "biblioscope", "type": "thematic"}
+      ]
+    },
+    {
+      "id": "journalscape",
+      "path": "/ai-analytics/journalscape/",
+      "title": "Journalscape",
+      "section": "ai-analytics",
+      "status": "validated",
+      "tags": ["classification", "small-models", "visualisation"],
+      "links_to": [
+        {"id": "biblioscope", "type": "thematic"},
+        {"id": "tufte-extensions", "type": "thematic"}
+      ]
+    },
+    {
+      "id": "biblioscope",
+      "path": "/ai-analytics/biblioscope/",
+      "title": "Biblioscope",
+      "section": "ai-analytics",
+      "status": "operational",
+      "tags": ["small-models", "corpus", "verification"],
+      "links_to": [
+        {"id": "loom", "type": "weak"}
+      ]
+    },
+    {
+      "id": "vacuity-index",
+      "path": "/evaluation/vacuity-index/",
+      "title": "Vacuity index",
+      "section": "evaluation",
+      "status": "concept",
+      "tags": ["verification", "writing-method"],
+      "links_to": [
+        {"id": "av-va", "type": "thematic"},
+        {"id": "research-musings", "type": "weak"}
+      ]
+    },
+    {
+      "id": "av-va",
+      "path": "/evaluation/av-va/",
+      "title": "AV|VA",
+      "section": "evaluation",
+      "status": "concept",
+      "tags": ["governance", "verification"],
+      "links_to": [
+        {"id": "verification-comparison", "type": "explicit"},
+        {"id": "red-teaming", "type": "thematic"}
+      ]
+    },
+    {
+      "id": "verification-comparison",
+      "path": "/evaluation/verification-comparison/",
+      "title": "Verification comparison",
+      "section": "evaluation",
+      "status": "implemented",
+      "tags": ["governance", "verification", "small-models"],
+      "links_to": [
+        {"id": "red-teaming", "type": "thematic"}
+      ]
+    },
+    {
+      "id": "red-teaming",
+      "path": "/evaluation/red-teaming/",
+      "title": "Red-teaming an agent",
+      "section": "evaluation",
+      "status": "implemented",
+      "tags": ["governance", "verification"],
+      "links_to": []
+    },
+    {
+      "id": "research-musings",
+      "path": "/writing/research-musings/",
+      "title": "Research Musings",
+      "section": "writing",
+      "status": "live",
+      "tags": ["writing-method", "conversational-bibliometrics"],
+      "links_to": [
+        {"id": "interviewing-yourself", "type": "thematic"},
+        {"id": "tufte-extensions", "type": "weak"}
+      ]
+    },
+    {
+      "id": "interviewing-yourself",
+      "path": "/writing/interviewing-yourself/",
+      "title": "Interviewing yourself",
+      "section": "writing",
+      "status": "implemented",
+      "tags": ["writing-method"],
+      "links_to": [
+        {"id": "tufte-extensions", "type": "explicit"}
+      ]
+    },
+    {
+      "id": "tufte-extensions",
+      "path": "/writing/tufte-extensions/",
+      "title": "Tufte's extensions",
+      "section": "writing",
+      "status": "implemented",
+      "tags": ["visualisation", "writing-method"],
+      "links_to": []
+    },
+    {
+      "id": "loom",
+      "path": "/builds/loom/",
+      "title": "Loom",
+      "section": "builds",
+      "status": "operational",
+      "tags": ["local-first", "small-models", "privacy"],
+      "links_to": [
+        {"id": "biblioflow", "type": "thematic"},
+        {"id": "children-voice-assistant", "type": "thematic"}
+      ]
+    },
+    {
+      "id": "children-voice-assistant",
+      "path": "/builds/children-voice-assistant/",
+      "title": "Children voice assistant",
+      "section": "builds",
+      "status": "proof-of-concept",
+      "tags": ["local-first", "privacy", "small-models"],
+      "links_to": [
+        {"id": "biblioflow", "type": "weak"}
+      ]
+    }
+  ],
+  "tags": [
+    {"id": "governance", "label": "Governance & audit"},
+    {"id": "conversational-bibliometrics", "label": "Conversational bibliometrics"},
+    {"id": "verification", "label": "Validation & verification"},
+    {"id": "small-models", "label": "Small models"},
+    {"id": "classification", "label": "Classification"},
+    {"id": "corpus", "label": "Corpus & pipelines"},
+    {"id": "bigquery", "label": "Dimensions / BigQuery"},
+    {"id": "local-first", "label": "Local-first"},
+    {"id": "privacy", "label": "Privacy"},
+    {"id": "visualisation", "label": "Visualisation"},
+    {"id": "writing-method", "label": "Writing method"}
+  ],
+  "link_types": [
+    {"id": "explicit", "label": "Explicit link", "description": "One page directly references another."},
+    {"id": "thematic", "label": "Thematic link", "description": "Pages share ideas or approach."},
+    {"id": "weak", "label": "Weak link", "description": "A lighter, incidental connection."}
+  ]
+}

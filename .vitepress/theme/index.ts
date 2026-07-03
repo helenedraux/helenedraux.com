@@ -6,6 +6,7 @@ import BumpedStackedBar from './components/BumpedStackedBar.vue'
 import ColorModeImage from './components/ColorModeImage.vue'
 import SiteIllustration from './components/SiteIllustration.vue'
 import NotFoundPage from './components/NotFoundPage.vue'
+import SiteMap from '../components/SiteMap.vue'
 import Layout from './Layout.vue'
 import { redirects } from './redirects'
 import './custom.css'
@@ -20,6 +21,7 @@ export default {
     app.component('ColorModeImage', ColorModeImage)
     app.component('SiteIllustration', SiteIllustration)
     app.component('NotFoundPage', NotFoundPage)
+    app.component('SiteMap', SiteMap)
     const applyRedirect = (path: string) => {
       const normalized = path.replace(/\.html$/i, '')
       const toPath = redirects[normalized]
