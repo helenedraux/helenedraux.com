@@ -11,6 +11,37 @@ import Layout from './Layout.vue'
 import { redirects } from './redirects'
 import './custom.css'
 
+declare global {
+  interface Window {
+    goatcounter?: {
+      count?: (vars?: { path?: string }) => void
+    }
+  }
+}
+
+function trackPageview(path: string) {
+  if (typeof window === 'undefined') return
+
+  const send = () => {
+    window.goatcounter?.count?.({ path })
+  }
+
+  if (window.goatcounter?.count) {
+    send()
+    return
+  }
+
+  const started = Date.now()
+  const timer = window.setInterval(() => {
+    if (window.goatcounter?.count) {
+      window.clearInterval(timer)
+      send()
+    } else if (Date.now() - started > 8000) {
+      window.clearInterval(timer)
+    }
+  }, 100)
+}
+
 export default {
   extends: DefaultTheme,
   Layout,
@@ -35,6 +66,10 @@ export default {
     }
 
     router.onBeforeRouteChange = (to: string) => !applyRedirect(to)
+    // VitePress calls router.go() on first load, so this covers initial + SPA navigations.
+    router.onAfterRouteChange = (to: string) => {
+      trackPageview(to)
+    }
 
     if (typeof window !== 'undefined') {
       applyRedirect(window.location.pathname)

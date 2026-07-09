@@ -12,6 +12,18 @@ export default defineConfig({
     hostname: 'https://helenedraux.com',
   },
 
+  head: [
+    [
+      'script',
+      {
+        'data-goatcounter': 'https://helenedraux.goatcounter.com/count',
+        'data-goatcounter-settings': JSON.stringify({ no_onload: true }),
+        async: '',
+        src: 'https://gc.zgo.at/count.js',
+      },
+    ],
+  ],
+
   themeConfig: {
     aside: false,
 
