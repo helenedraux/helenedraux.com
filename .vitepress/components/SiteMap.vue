@@ -489,7 +489,7 @@ onBeforeUnmount(() => {
         <div class="rs-map__title">A network of ideas and projects</div>
         <hr class="rs-map__rule" />
         <p class="rs-map__intro">
-          Nodes are this website's pages, edges are the links — explicit
+          Nodes are this website's pages, edges are the links; explicit
           references or thematic connections. Click a tag to pick up a thread.
         </p>
 
