@@ -7,7 +7,7 @@ description: Senior data scientist with 9+ years delivering research intelligenc
 <div class="rs-home-hero-layout">
   <div class="rs-home-hero">
     <p class="rs-home-eyebrow">data · AI-assisted analytics · governed AI</p>
-    <p class="rs-home-statement">I build <a href="/ai-analytics/">slow AI analytics</a>: the user steers, the AI stays at the border, and the analytical core stays <a href="/evaluation/">auditable</a>.</p>
+    <p class="rs-home-statement">I build <a href="/ai-analytics/">governed AI analytics</a>: the user steers, the AI stays at the border, and the analytical core stays <a href="/evaluation/">auditable</a>.</p>
   </div>
   <div class="rs-home-hero-illustration">
     <SiteIllustration name="laptop_robot" alt="Hélène at her laptop, with a small robot nearby" size="hero" />
