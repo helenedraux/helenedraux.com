@@ -48,7 +48,7 @@
       "links_to": [
         {"id": "ai-metascientist", "type": "explicit"},
         {"id": "corpus-builder", "type": "explicit"},
-        {"id": "verification-comparison", "type": "thematic"},
+        {"id": "meta-evaluation", "type": "thematic"},
         {"id": "grid-plus", "type": "thematic"}
       ]
     },
@@ -107,14 +107,14 @@
       "status": "concept",
       "tags": ["governance", "verification"],
       "links_to": [
-        {"id": "verification-comparison", "type": "explicit"},
+        {"id": "meta-evaluation", "type": "explicit"},
         {"id": "red-teaming", "type": "thematic"}
       ]
     },
     {
-      "id": "verification-comparison",
-      "path": "/evaluation/verification-comparison/",
-      "title": "Verification comparison",
+      "id": "meta-evaluation",
+      "path": "/evaluation/meta-evaluation/",
+      "title": "Meta-evaluation",
       "section": "evaluation",
       "status": "implemented",
       "tags": ["governance", "verification", "small-models"],

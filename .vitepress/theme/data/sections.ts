@@ -78,7 +78,7 @@ export const sections: Record<string, Section> = {
   evaluation: {
     title: 'Evaluation',
     intro:
-      '<p>In AI analytics, I never assume an output will be reliable on the first turn, which is why I say I <a href="/ai-analytics/corpus-builder/">work slowly</a>; I build in relevant validation of the input and verification of the output, rather than trusting either by default.</p><p>Below are four examples:</p><ul><li>The <a href="/evaluation/vacuity-index/"><strong>vacuity index</strong></a> is an experiment I wrote for <a href="/writing/research-musings/"><em>Research Musings</em></a>, and the inspiration behind validating the input in <a href="/evaluation/av-va/">AV|VA</a>.</li><li><a href="/evaluation/av-va/"><strong>AV|VA</strong></a> is the framework the rest grew around: a proposition for proportionate validation and verification, scaled to what the LLM is being used for and what the task actually requires.</li><li>The <a href="/evaluation/verification-comparison/"><strong>verification comparison</strong></a> is a simplified methodology I built at work to decide which LLM we should keep internally, and to show that an AI output isn\'t to be trusted on the first turn, however fluent it reads.</li><li><a href="/evaluation/red-teaming/"><strong>Red-teaming an analytical agent</strong></a> is what I check when the user is adversarial rather than honest: whether a system holds its methodological and commercial integrity under pressure, not just its credentials.</li></ul>',
+      '<p>In AI analytics, I never assume an output will be reliable on the first turn, which is why I say I <a href="/ai-analytics/corpus-builder/">work slowly</a>; I build in relevant validation of the input and verification of the output, rather than trusting either by default.</p><p>Below are four examples:</p><ul><li>The <a href="/evaluation/vacuity-index/"><strong>vacuity index</strong></a> is an experiment I wrote for <a href="/writing/research-musings/"><em>Research Musings</em></a>, and the inspiration behind validating the input in <a href="/evaluation/av-va/">AV|VA</a>.</li><li><a href="/evaluation/av-va/"><strong>AV|VA</strong></a> is the framework the rest grew around: a proposition for proportionate validation and verification, scaled to what the LLM is being used for and what the task actually requires.</li><li><a href="/evaluation/meta-evaluation/"><strong>Meta-evaluation</strong></a> is a simplified methodology I built at work to decide which LLM we should keep internally, and to show that an AI output isn\'t to be trusted on the first turn, however fluent it reads.</li><li><a href="/evaluation/red-teaming/"><strong>Red-teaming an analytical agent</strong></a> is what I check when the user is adversarial rather than honest: whether a system holds its methodological and commercial integrity under pressure, not just its credentials.</li></ul>',
     cards: [
       {
         title: 'Vacuity index',
@@ -93,8 +93,8 @@ export const sections: Record<string, Section> = {
           'The framework those two cases sit around: a proposition for proportionate validation and verification, scaled to what the LLM is being used for and what the task actually requires.',
       },
       {
-        title: 'Verification comparison',
-        link: '/evaluation/verification-comparison/',
+        title: 'Meta-evaluation',
+        link: '/evaluation/meta-evaluation/',
         description:
           'A simplified methodology I built at work to decide which LLM we should keep internally and to show that an AI output isn\'t to be trusted on the first turn, however fluent it reads.',
       },

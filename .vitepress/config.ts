@@ -67,7 +67,7 @@ export default defineConfig({
           items: [
             { text: 'Vacuity index', link: '/evaluation/vacuity-index/' },
             { text: 'AV|VA', link: '/evaluation/av-va/' },
-            { text: 'Verification comparison', link: '/evaluation/verification-comparison/' },
+            { text: 'Meta-evaluation', link: '/evaluation/meta-evaluation/' },
             { text: 'Red-teaming an analytical agent', link: '/evaluation/red-teaming/' },
           ],
         },
